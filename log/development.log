@@ -1,0 +1,449 @@
+  [1m[36m (90.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (200.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreatePages (20140621084433)
+  [1m[35m (112.5ms)[0m  CREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `text` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140621084433')
+  [1m[36m (56.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20140621085008)
+  [1m[35m (108.6ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140621085008')
+  [1m[36m (41.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSlides (20140621085101)
+  [1m[35m (131.8ms)[0m  CREATE TABLE `slides` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140621085101')
+  [1m[36m (40.2ms)[0m  [1mCOMMIT[0m
+Migrating to AddAttachmentImageToSlides (20140621085116)
+  [1m[35m (288.8ms)[0m  ALTER TABLE `slides` ADD `image_file_name` varchar(255)
+  [1m[36m (180.6ms)[0m  [1mALTER TABLE `slides` ADD `image_content_type` varchar(255)[0m
+  [1m[35m (178.9ms)[0m  ALTER TABLE `slides` ADD `image_file_size` int(11)
+  [1m[36m (179.2ms)[0m  [1mALTER TABLE `slides` ADD `image_updated_at` datetime[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140621085116')[0m
+  [1m[35m (41.0ms)[0m  COMMIT
+Migrating to CreateProducts (20140621091114)
+  [1m[36m (130.9ms)[0m  [1mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140621091114')[0m
+  [1m[35m (40.6ms)[0m  COMMIT
+Migrating to AddUserNameToUser (20140621092058)
+  [1m[36m (247.4ms)[0m  [1mALTER TABLE `users` ADD `user_name` varchar(255)[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140621092058')[0m
+  [1m[35m (26.1ms)[0m  COMMIT
+Migrating to CreateCategories (20140726130902)
+  [1m[36m (141.8ms)[0m  [1mCREATE TABLE `categories` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title_en` varchar(255), `title_fa` varchar(255), `description_en` text, `description_fa` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140726130902')[0m
+  [1m[35m (30.5ms)[0m  COMMIT
+Migrating to CreateMessages (20140726131030)
+  [1m[36m (120.0ms)[0m  [1mCREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `phone_number` varchar(255), `text` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140726131030')[0m
+  [1m[35m (29.8ms)[0m  COMMIT
+Migrating to AddFieldsToProduct (20140726131207)
+  [1m[36m (212.0ms)[0m  [1mALTER TABLE `products` ADD `title_fa` varchar(255)[0m
+  [1m[35m (201.1ms)[0m  ALTER TABLE `products` ADD `description_fa` text
+  [1m[36m (223.5ms)[0m  [1mALTER TABLE `products` ADD `category_id` int(11)[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140726131207')[0m
+  [1m[35m (29.8ms)[0m  COMMIT
+Migrating to CreatePictures (20140726131316)
+  [1m[36m (141.6ms)[0m  [1mCREATE TABLE `pictures` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `description_en` varchar(255), `description_fa` varchar(255), `product_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140726131316')[0m
+  [1m[35m (30.9ms)[0m  COMMIT
+Migrating to AddAttachmentImageToPictures (20140726132311)
+  [1m[36m (233.7ms)[0m  [1mALTER TABLE `pictures` ADD `image_file_name` varchar(255)[0m
+  [1m[35m (179.0ms)[0m  ALTER TABLE `pictures` ADD `image_content_type` varchar(255)
+  [1m[36m (180.8ms)[0m  [1mALTER TABLE `pictures` ADD `image_file_size` int(11)[0m
+  [1m[35m (201.4ms)[0m  ALTER TABLE `pictures` ADD `image_updated_at` datetime
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140726132311')
+  [1m[36m (40.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCkeditorAssets (20140726174926)
+  [1m[35m (124.9ms)[0m  CREATE TABLE `ckeditor_assets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `data_file_name` varchar(255) NOT NULL, `data_content_type` varchar(255), `data_file_size` int(11), `assetable_id` int(11), `assetable_type` varchar(30), `type` varchar(30), `width` int(11), `height` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (166.7ms)[0m  [1mCREATE INDEX `idx_ckeditor_assetable_type` ON `ckeditor_assets` (`assetable_type`, `type`, `assetable_id`) [0m
+  [1m[35m (196.1ms)[0m  CREATE INDEX `idx_ckeditor_assetable` ON `ckeditor_assets` (`assetable_type`, `assetable_id`) 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140726174926')
+  [1m[36m (79.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddFiledsToPage (20140726174927)
+  [1m[35m (211.8ms)[0m  ALTER TABLE `pages` ADD `title_fa` varchar(255)
+  [1m[36m (202.4ms)[0m  [1mALTER TABLE `pages` ADD `text_fa` text[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20140726174927')[0m
+  [1m[35m (40.0ms)[0m  COMMIT
+Migrating to RemoveImageFieldsFromProduct (20140726174928)
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE `products` DROP `image_file_name`[0m
+Mysql2::Error: Can't DROP 'image_file_name'; check that column/key exists: ALTER TABLE `products` DROP `image_file_name`
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to AddDescriptionFaToSlide (20140727044014)
+  [1m[35m (267.3ms)[0m  ALTER TABLE `slides` ADD `description_fa` varchar(255)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140727044014')
+  [1m[36m (62.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-30 10:25:17 +0330
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by StaticController#home as HTML
+  Rendered static/home.html.haml within layouts/application (48.2ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT `pages`.* FROM `pages`
+  Rendered shared/_menu.html.haml (73.9ms)
+Completed 200 OK in 1394ms (Views: 1320.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-30 10:25:19 +0330
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-30 10:25:19 +0330
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 10:25:19 +0330
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 10:25:19 +0330
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-30 10:25:19 +0330
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-30 10:25:19 +0330
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:25:19 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:25:19 +0330
+
+
+Started GET "/static/home?locale=en" for 127.0.0.1 at 2014-12-30 10:25:28 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered static/home.html.haml within layouts/application (1.6ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  Rendered shared/_menu.html.haml (5.6ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:25:28 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:25:28 +0330
+
+
+Started GET "/static/home?locale=fa" for 127.0.0.1 at 2014-12-30 10:25:30 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"fa"}
+  Rendered static/home.html.haml within layouts/application (3.3ms)
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages`
+  Rendered shared/_menu.html.haml (49.8ms)
+Completed 200 OK in 72ms (Views: 69.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:25:30 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:25:30 +0330
+
+
+Started GET "/static/home?locale=en" for 127.0.0.1 at 2014-12-30 10:25:31 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered static/home.html.haml within layouts/application (0.2ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  Rendered shared/_menu.html.haml (2.5ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:25:31 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:25:31 +0330
+
+
+Started GET "/static/home?locale=fa" for 127.0.0.1 at 2014-12-30 10:25:33 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"fa"}
+  Rendered static/home.html.haml within layouts/application (0.2ms)
+  [1m[35mPage Load (0.2ms)[0m  SELECT `pages`.* FROM `pages`
+  Rendered shared/_menu.html.haml (2.6ms)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:25:33 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:25:33 +0330
+
+
+Started GET "/static/home?locale=en" for 127.0.0.1 at 2014-12-30 10:25:34 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered static/home.html.haml within layouts/application (0.3ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  Rendered shared/_menu.html.haml (2.3ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:25:34 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:25:34 +0330
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`title_fa` = 'درباره ما'
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `pages` (`created_at`, `title`, `title_fa`, `updated_at`) VALUES ('2014-12-30 06:56:03', 'About us', 'درباره ما', '2014-12-30 06:56:03')
+  [1m[36m (41.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`title_fa` = 'تماس با ما'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `pages` (`created_at`, `title`, `title_fa`, `updated_at`) VALUES ('2014-12-30 06:56:03', 'Contact us', 'تماس با ما', '2014-12-30 06:56:03')
+  [1m[36m (50.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `pages`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`user_name` = 'admin'[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `email`, `password`, `updated_at`, `user_name`) VALUES ('2014-12-30 06:56:03', 'web.development@raush.ir', '123qwe', '2014-12-30 06:56:03', 'admin')[0m
+  [1m[35m (53.3ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+
+
+Started GET "/static/home?locale=en" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered static/home.html.haml within layouts/application (0.2ms)
+  [1m[35mPage Load (0.7ms)[0m  SELECT `pages`.* FROM `pages`
+  Rendered shared/_menu.html.haml (17.6ms)
+Completed 200 OK in 28ms (Views: 23.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/ckeditor/init.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/ckeditor/ckeditor.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:06 +0330
+
+
+Started GET "/static/home?locale=fa" for 127.0.0.1 at 2014-12-30 10:26:09 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"fa"}
+  Rendered static/home.html.haml within layouts/application (0.3ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  Rendered shared/_menu.html.haml (3.6ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:09 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:09 +0330
+
+
+Started GET "/static/home?locale=en" for 127.0.0.1 at 2014-12-30 10:26:10 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered static/home.html.haml within layouts/application (0.2ms)
+  [1m[35mPage Load (0.2ms)[0m  SELECT `pages`.* FROM `pages`
+  Rendered shared/_menu.html.haml (3.2ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:10 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:10 +0330
+
+
+Started GET "/static/home?locale=fa" for 127.0.0.1 at 2014-12-30 10:26:11 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"fa"}
+  Rendered static/home.html.haml within layouts/application (0.3ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  Rendered shared/_menu.html.haml (3.5ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:11 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:11 +0330
+
+
+Started GET "/users" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+Processing by UsersController#index as HTML
+Redirected to http://localhost:3000/?locale=en
+Filter chain halted as :check_autentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered static/home.html.haml within layouts/application (0.2ms)
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages`
+  Rendered shared/_menu.html.haml (4.7ms)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:29 +0330
+
+
+Started GET "/login" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+Processing by UsersController#login as HTML
+  Rendered users/login.html.haml within layouts/application (5.3ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  Rendered shared/_menu.html.haml (3.1ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:36 +0330
+
+
+Started POST "/create_session?locale=en" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+Processing by UsersController#create_session as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3lJcTH8W5jlBZELhFQf/EiQhjXNU0SIcU3IkEFkpKV8=", "user_name"=>"admin", "password"=>"[FILTERED]", "commit"=>"ورود", "locale"=>"en"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`user_name` = 'admin' ORDER BY `users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/?locale=en
+Completed 302 Found in 39ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/?locale=en" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+Processing by StaticController#home as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered static/home.html.haml within layouts/application (0.1ms)
+  [1m[36mPage Load (0.2ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  Rendered shared/_menu.html.haml (9.3ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:37 +0330
+
+
+Started GET "/en/products" for 127.0.0.1 at 2014-12-30 10:26:42 +0330
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mProduct Load (0.6ms)[0m  SELECT `products`.* FROM `products`
+  Rendered products/index.html.haml within layouts/application (6.4ms)
+  [1m[36mPage Load (0.3ms)[0m  [1mSELECT `pages`.* FROM `pages`[0m
+  Rendered shared/_menu.html.haml (7.0ms)
+Completed 200 OK in 80ms (Views: 30.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:42 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:42 +0330
+
+
+Started GET "/en/products/new" for 127.0.0.1 at 2014-12-30 10:26:45 +0330
+Processing by ProductsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered products/_form.html.haml (43.6ms)
+  Rendered products/new.html.haml within layouts/application (49.9ms)
+  [1m[35mPage Load (0.4ms)[0m  SELECT `pages`.* FROM `pages`
+  Rendered shared/_menu.html.haml (3.9ms)
+Completed 200 OK in 69ms (Views: 62.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/flag/en.png" for 127.0.0.1 at 2014-12-30 10:26:45 +0330
+
+
+Started GET "/assets/flag/fa.png" for 127.0.0.1 at 2014-12-30 10:26:45 +0330
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mPage Load (0.5ms)[0m  SELECT `pages`.* FROM `pages` WHERE `pages`.`title_fa` = 'درباره ما'
+  [1m[36mPage Load (0.6ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE `pages`.`title_fa` = 'تماس با ما'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `pages`
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`user_name` = 'admin'[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`

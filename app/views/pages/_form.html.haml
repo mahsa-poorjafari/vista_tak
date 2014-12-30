@@ -1,0 +1,21 @@
+= form_for @page do |f|
+  - if @page.errors.any?
+    #error_explanation      
+      %ul
+        - @page.errors.each do |attr, msg|
+          %li= msg
+
+  .field
+    = f.label 'عنوان به انگلیسی:'
+    = f.text_field :title
+  .field
+    = f.label 'عنوان به فارسی:'
+    = f.text_field :title_fa
+  .field
+    = f.label 'متن به فارسی:'
+    = f.cktext_area :text
+  .field
+    = f.label 'متن به انگلیسی:'
+    = f.cktext_area :text_fa
+  .actions
+    = f.submit 'Save'

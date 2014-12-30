@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title= 'بسته درجه دو'
+ 
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true 
+    = javascript_include_tag "application", "data-turbolinks-track" => true 
+    = csrf_meta_tags 
+
+  %body
+    %header
+      .language
+        .lan-title= 'LANGUAGE'
+        = link_to (image_tag 'flag/en.png'), locale: :en          
+        = link_to (image_tag 'flag/fa.png'), locale: :fa
+      .menu
+        = render 'shared/menu'
+            
+      
+    = yield 

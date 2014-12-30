@@ -1,0 +1,15 @@
+= form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation      
+      %ul
+        - @user.errors.each do |attr, msg|
+          %li= msg
+
+  .field
+    = f.label 'نام کاربری:'
+    = f.text_field :email
+  .field
+    = f.label 'رمزعبور:'
+    = f.text_field :password
+  .actions
+    = f.submit 'Save'
