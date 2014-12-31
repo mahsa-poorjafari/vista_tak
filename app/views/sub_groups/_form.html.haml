@@ -1,0 +1,30 @@
+= form_for @sub_group do |f|
+  - if @sub_group.errors.any?
+    #error_explanation      
+      %ul
+        - @sub_group.errors.each do |attr, msg|
+          %li= msg
+  
+  .col-xs-12
+    .col-xs-6.pull-right
+      .form-group
+        = f.label 'عنوان به انگلیسی:', :class => "control-label"
+        = f.text_field :title_en, :class => "form-control"
+      .form-group
+        = f.label 'عنوان به فارسی:', :class => "control-label"
+        = f.text_field :title_fa, :class => "form-control"
+      .form-group
+        = f.label 'گروه مربوط را انتخاب کنید.', :class => "control-label"  
+        = f.select :category_id, options_for_select(Category.all.collect{ |u| [u.title_fa, u.id] }), prompt: "گروه فعالیت ها را انتخاب کنید.", :class => "form-control"
+    .col-xs-12
+      .form-group
+        = f.label 'توضیحات به انگلیسی:', :class => "control-label"
+        .editor
+          = f.text_area :description_en, :class => "ckeditor"
+      .form-group
+        = f.label 'توضیحات به فارسی:', :class => "control-label"
+        .editor  
+          = f.text_area :description_fa, :class => "ckeditor"
+      .form-group
+        = f.submit 'ثبت', :class => "btn btn-primary"
+  .clear-float

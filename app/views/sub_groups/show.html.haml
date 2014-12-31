@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title en:
+  = @sub_group.title_en
+%p
+  %b Title fa:
+  = @sub_group.title_fa
+%p
+  %b Description en:
+  = @sub_group.description_en
+%p
+  %b Description fa:
+  = @sub_group.description_fa
+
+= link_to 'Edit', edit_sub_group_path(@sub_group)
+\|
+= link_to 'Back', sub_groups_path

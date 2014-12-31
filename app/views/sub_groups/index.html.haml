@@ -1,0 +1,27 @@
+.margin3{:class => I18n.locale}
+  %h1 لیست زیرگروه فعالیت ها
+  - if is_admin?
+    = link_to 'تعریف زیرگروه جدید', new_sub_group_path, :class => "btn btn-success"
+  %table
+    %tr
+      %th Title en
+      %th Title fa
+      %th Description en
+      %th Description fa
+      %th
+      %th
+      %th
+
+    - @sub_groups.each do |sub_group|
+      %tr
+        %td= sub_group.title_en
+        %td= sub_group.title_fa
+        %td= sub_group.description_en
+        %td= sub_group.description_fa
+        %td= link_to 'Show', sub_group
+        %td= link_to 'Edit', edit_sub_group_path(sub_group)
+        %td= link_to 'Destroy', sub_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+
+

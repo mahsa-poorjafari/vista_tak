@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140727044014) do
+ActiveRecord::Schema.define(version: 20141231072329) do
+
+  create_table "ahoy_events", force: true do |t|
+    t.uuid     "visit_id"
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "properties"
+    t.datetime "time"
+  end
+
+  add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
+  add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
+  add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "title_en"
@@ -56,6 +68,20 @@ ActiveRecord::Schema.define(version: 20140727044014) do
     t.text     "text_fa"
   end
 
+  create_table "photos", force: true do |t|
+    t.string   "description_en"
+    t.string   "description_fa"
+    t.integer  "category_id"
+    t.integer  "sub_group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "product_id"
+  end
+
   create_table "pictures", force: true do |t|
     t.string   "description_en"
     t.string   "description_fa"
@@ -66,6 +92,8 @@ ActiveRecord::Schema.define(version: 20140727044014) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "sub_group_id"
+    t.integer  "category_id"
   end
 
   create_table "products", force: true do |t|
@@ -76,6 +104,7 @@ ActiveRecord::Schema.define(version: 20140727044014) do
     t.string   "title_fa"
     t.text     "description_fa"
     t.integer  "category_id"
+    t.integer  "sub_group_id"
   end
 
   create_table "slides", force: true do |t|
@@ -89,6 +118,16 @@ ActiveRecord::Schema.define(version: 20140727044014) do
     t.string   "description_fa"
   end
 
+  create_table "sub_groups", force: true do |t|
+    t.string   "title_en"
+    t.string   "title_fa"
+    t.text     "description_en"
+    t.text     "description_fa"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password"
@@ -96,5 +135,30 @@ ActiveRecord::Schema.define(version: 20140727044014) do
     t.datetime "updated_at"
     t.string   "user_name"
   end
+
+  create_table "visits", force: true do |t|
+    t.uuid     "visitor_id"
+    t.string   "ip"
+    t.text     "user_agent"
+    t.text     "referrer"
+    t.text     "landing_page"
+    t.integer  "user_id"
+    t.string   "referring_domain"
+    t.string   "search_keyword"
+    t.string   "browser"
+    t.string   "os"
+    t.string   "device_type"
+    t.string   "country"
+    t.string   "region"
+    t.string   "city"
+    t.string   "utm_source"
+    t.string   "utm_medium"
+    t.string   "utm_term"
+    t.string   "utm_content"
+    t.string   "utm_campaign"
+    t.datetime "started_at"
+  end
+
+  add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
 
 end

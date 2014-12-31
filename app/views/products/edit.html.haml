@@ -1,7 +1,8 @@
-%h1 Editing product
+.margin3{:class => I18n.locale}
+  %h1 ویرایش پروژه
+  = link_to 'Show', @product, :class => "btn btn-warning"      
+  = render 'form'
 
-= render 'form'
 
-= link_to 'Show', @product
-\|
-= link_to 'Back', products_path
+
+

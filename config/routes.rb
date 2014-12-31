@@ -1,5 +1,9 @@
 PackB::Application.routes.draw do
 
+  resources :photos
+
+  resources :sub_groups
+
   scope "(:locale)", :locale => /en|fa/ do  
     resources :pictures
 

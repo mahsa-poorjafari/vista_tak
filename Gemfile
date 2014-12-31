@@ -14,6 +14,9 @@ gem 'ckeditor'
 
 gem "friendly_id", "~> 5.0.1"
 gem 'jalalidate'
+gem "nested_form"
+gem 'ahoy_matey'
+gem 'activeuuid', '>= 0.5.0'
 gem "twitter-bootstrap-rails"
 gem 'i18n'
 group :production do

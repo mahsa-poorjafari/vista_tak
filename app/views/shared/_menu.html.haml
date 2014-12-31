@@ -6,14 +6,5 @@
   - Page.all.each do |page|
     %li
       = link_to page.title, page
-- if is_admin?
-  %b منوی مدیرسایت
-  %ul.admin
-    %li
-      = link_to 'پروفایل مدیرسایت', User
-    %li
-      = link_to 'مدیریت صفحات متنی', Page
-    %li
-      = link_to 'مدیریت اسلایدر', Slide
 
 .clear-float

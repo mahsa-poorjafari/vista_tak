@@ -1,7 +1,8 @@
-%h1 Editing category
+.col-xs-12{:class => I18n.locale}
+  %h1 ویرایش دسته فعالیت ها 
+  = link_to 'Show', @category, :class => "btn btn-warning"      
+  = render 'form'
 
-= render 'form'
 
-= link_to 'Show', @category
-\|
-= link_to 'Back', categories_path
+  
+  
