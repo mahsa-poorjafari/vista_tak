@@ -1,9 +1,12 @@
-%p#notice= notice
+.margin3{:class => I18n.locale}  
 
-%p
-  %b Description:
-  = @slide.description
+  %div= image_tag @slide.image(:original)
+  
+  %p
+    %b Description:
+    = @slide.description
 
-= link_to 'Edit', edit_slide_path(@slide)
-\|
-= link_to 'Back', slides_path
+
+  - if is_admin?
+    = link_to 'Edit', edit_slide_path(@slide), :class => "btn btn-info" 
+    = link_to 'Destroy', @slide, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"

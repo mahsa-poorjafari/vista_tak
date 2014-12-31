@@ -1,7 +1,6 @@
-%h1 Editing slide
-
-= render 'form'
-
-= link_to 'Show', @slide
-\|
-= link_to 'Back', slides_path
+.margin3{:class => I18n.locale}  
+  %h1 ویرایش تصویر به اسلایدر
+  
+  - if is_admin?
+    = link_to 'مشاهده', @slide, :class => "btn btn-warning"    
+  = render 'form'

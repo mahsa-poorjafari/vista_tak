@@ -18,9 +18,9 @@
         %td= category.title_fa
         %td= category.description_en
         %td= category.description_fa
-        %td= link_to 'Show', category
-        %td= link_to 'Edit', edit_category_path(category)
-        %td= link_to 'Destroy', category, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'مشاهده', category, :class => "btn btn-warning"    
+        %td= link_to 'ویرایش', edit_category_path(category), :class => "btn btn-info" 
+        %td= link_to 'حذف', category, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
 
 

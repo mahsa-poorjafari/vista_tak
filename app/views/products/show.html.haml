@@ -1,12 +1,11 @@
-%p#notice= notice
+.margin3{:class => I18n.locale}  
+  %h1= @product.title
+  -if is_admin?
+    = link_to 'ویرایش', edit_product_path(@product), :class => "btn btn-danger"  
+  %div
+    =raw @product.description
+  - if @product.photos.present?
+    - @product.photos.each do |pic|
+      .col-xs-6= image_tag pic.image(:medium)
 
-%p
-  %b Title:
-  = @product.title
-%p
-  %b Description:
-  = @product.description
 
-= link_to 'Edit', edit_product_path(@product)
-\|
-= link_to 'Back', products_path

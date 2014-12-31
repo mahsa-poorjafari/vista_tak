@@ -9,9 +9,9 @@
         %p= slide.description
         - if is_admin?
           .admin-link
-            = link_to 'Show', slide
-            = link_to 'Edit', edit_slide_path(slide)
-            = link_to 'Destroy', slide, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to 'مشاهده', slide, :class => "btn btn-warning"    
+            = link_to 'ویرایش', edit_slide_path(slide), :class => "btn btn-info" 
+            = link_to 'حذف', slide, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
 
 
