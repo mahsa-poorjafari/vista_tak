@@ -1,4 +1,4 @@
-= form_for @category do |f|
+= nested_form_for @category, :html => { :multipart => true  } do |f|
   - if @category.errors.any?
     #error_explanation      
       %ul
@@ -12,6 +12,15 @@
       .form-group
         = f.label 'عنوان به فارسی:', :class => "control-label"
         = f.text_field :title_fa, :class => "form-control"
+    .col-xs-12 
+      .form-group.col-xs-12 
+        %p{:class => I18n.locale}="برای افزودن تصاویر برای این پروژه دکمه زیر را فشار دهید و در کادری که نمایش داده می شود تصویر مورد نظر را انتخاب کنید:"
+        %p{ :style=> "color:#ec523f", :class => I18n.locale}= "دقت داشته باشید حجم هر عکس باید کمتر از ۵۰۰کیلوبایت باشد."
+        = f.link_to_add content_tag(:span, "افزودن تصویر", :class => "btn btn-warning" ), :photos, :id => "add_new_picture"
+      .col-xs-12 
+        = f.fields_for :photos do |picture|  
+          .col-xs-4
+            = render "shared/upload_image_form", :picture => picture
     .col-xs-12
       .form-group
         = f.label 'توضیحات به انگلیسی:', :class => "control-label"

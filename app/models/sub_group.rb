@@ -3,8 +3,8 @@ class SubGroup < ActiveRecord::Base
   extend FriendlyId  
   friendly_id :title_fa
   belongs_to :category
-  has_many :pictures
-  accepts_nested_attributes_for :pictures, reject_if: :all_blank, allow_destroy: true
+  has_many :photos
+  accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
   
   validates :title_fa, :title_en, :presence => {:message => 'فیلدهای ضروری را پر کنید'}
   validates :title_fa, :title_en, :uniqueness => {:message => 'عنوان تکراری است'}
