@@ -2,8 +2,8 @@
 namespace :db do
   desc "creates default pages -> about us and contact us"
   task :add_default_pages => :environment do
-    Page.create(:title_fa => "درباره ما", :title => "About us" ) if Page.where(title_fa:"درباره ما").blank?
-    Page.create(:title_fa => "تماس با ما", :title => "Contact us") if Page.where(title_fa:"تماس با ما").blank?
+    Page.create(:title_fa => "درباره ما", :title_en => "About us" ) if Page.where(title_fa:"درباره ما").blank?
+    Page.create(:title_fa => "تماس با ما", :title_en => "Contact us") if Page.where(title_fa:"تماس با ما").blank?
     p "#{Page.count} pages created"
   end
 

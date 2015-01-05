@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231072329) do
+ActiveRecord::Schema.define(version: 20150105131755) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 20141231072329) do
     t.text     "description_fa"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -60,12 +64,12 @@ ActiveRecord::Schema.define(version: 20141231072329) do
   end
 
   create_table "pages", force: true do |t|
-    t.string   "title"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title_fa"
     t.text     "text_fa"
+    t.string   "title_en"
   end
 
   create_table "photos", force: true do |t|
@@ -116,6 +120,8 @@ ActiveRecord::Schema.define(version: 20141231072329) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "description_fa"
+    t.string   "title_en"
+    t.string   "title_fa"
   end
 
   create_table "sub_groups", force: true do |t|

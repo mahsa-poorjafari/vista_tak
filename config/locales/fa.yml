@@ -22,3 +22,10 @@
 fa:
   hello: "Hello world"
   vistatech: 'ویستا تک پیشرو'
+  our-service: 'حیطه فعالیت های ویستاتک پیشرو'
+  des-service: 'توضیحات درباره حیطه فعالیتها'
+  about: 'درباره ویستاتک پیشرو'
+  contact: 'با ما در ارتباط باشید'
+  projects: 'پروژه های ویستاتک پیشرو'
+  show-all: 'نمایش همه'
+  our-client: 'مشتریان ما'

@@ -1,2 +1,294 @@
-%h1 Static#home
-%p Find me in app/views/static/home.html.haml
+
+/ Start home section
+#home
+  / Start cSlider
+  #da-slider.da-slider
+    .triangle
+    / mask elemet use for masking background image
+    .mask
+    / All slides centred in container element
+    .container      
+      - @slider.each do |slide|
+        
+        .da-slide 
+          - if I18n.locale == :fa
+            .da-img.pull-left
+              = image_tag slide.image(:small), :alt => slide.title_fa
+            .pull-right{:style => "margin-top: 10%;margin-right: 20%;"}
+              %h2.fittext2= slide.title
+              -#
+                %h4 Clean & responsive
+              %p= raw slide.description    
+              -#
+                %a.da-link.button{:href => "#"} Read more
+          - else
+            .da-img.pull-right
+              = image_tag slide.image(:small), :alt => slide.title_fa
+            .pull-left{:style => "margin-top: 10%;margin-left: 20%;"}
+              %h2.fittext2= slide.title
+              -#
+                %h4 Clean & responsive
+              %p= raw slide.description    
+              -#
+                %a.da-link.button{:href => "#"} Read more
+          
+         
+     
+      / Start cSlide navigation arrows
+      .da-arrows
+        %span.da-arrows-prev
+        %span.da-arrows-next
+      / End cSlide navigation arrows
+/ End home section
+/ Service section start
+#service.section.primary-section
+  .container
+    / Start title section
+    .title
+      %h1= t('our-service')
+      / Section's title goes here
+      %p= t('des-service')
+      / Simple description for section goes here.
+    .row-fluid
+      - @categories.each do |category|
+        .span4
+          .centered.service
+            .circle-border.zoom-in
+              = image_tag category.icon(:small), :class => "img-circle", :alt => category.title_fa              
+            %h3= category.title
+            %p= raw category.description
+      
+/ Service section end
+/ Portfolio section start
+#portfolio.section.secondary-section
+  .triangle
+  .container
+    .title
+      %h1= t('projects')      
+    %ul.nav.nav-pills
+      %li.filter{"data-filter" => "all"}
+        = link_to t('show-all'), '#noAction'
+      - Category.all.each do |cat|        
+        %li.filter{"data-filter" => ".category-" + cat.id.to_s}
+          = link_to cat.title, '#noAction'
+        
+    / Start details for portfolio project 1
+    #single-project
+      %ul#portfolio-grid.thumbnails.row
+        - SubGroup.all.each do |subgroup|
+          %li.span4.mix{:class => "category-" + subgroup.category_id.to_s}
+            .thumbnail
+              - if subgroup.photos.present?
+                = image_tag subgroup.photos.first.image(:small), :alt => subgroup.category.title
+              = link_to "#single-project", :rel => "#slidingDiv", :class => "more show_hide" do
+                %i.icon-plus
+              %h3= subgroup.title
+              %p= subgroup.description
+              .mask
+       
+/ Portfolio section end
+/ About us section start
+#about.section.primary-section
+  .triangle
+  .container
+    .title
+      %h1= t('about')
+    .about-text.centered      
+      %p= raw @about.first.text
+    -#
+      %h3 Skills
+      .row-fluid
+        .span6
+          %ul.skills
+            %li
+              %span.bar{"data-width" => "80%"}
+              %h3 Graphic Design
+            %li
+              %span.bar{"data-width" => "95%"}
+              %h3 Html & Css
+            %li
+              %span.bar{"data-width" => "68%"}
+              %h3 jQuery
+            %li
+              %span.bar{"data-width" => "70%"}
+              %h3 Wordpress
+        .span6
+          .highlighted-box.center
+            %h1 We're Hiring
+            %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, ullamcorper suscipit lobortis nisl ut aliquip consequat. I learned that we can do anything, but we can't do everything...
+            %button.button.button-sp Join Us
+/ About us section end
+-#
+  .section.secondary-section
+    .triangle
+    .container.centered
+      %p.large-text Elegance is not the abundance of simplicity. It is the absence of complexity.
+      %a.button{:href => "#"} Purshase now
+  / Client section start
+  / Client section start
+  #clients
+    .section.primary-section
+      .triangle
+      .container
+        .title
+          %h1 What Client Say?
+          %p Duis mollis placerat quam, eget laoreet tellus tempor eu. Quisque dapibus in purus in dignissim.
+        .row
+          .span4
+            .testimonial
+              %p "I've worked too hard and too long to let anything stand in the way of my goals. I will not let my teammates down and I will not let myself down."
+              .whopic
+                .arrow
+                %img.centered{:alt => "client 1", :src => "images/Client1.png"}/
+                %strong
+                  John Doe
+                  %small Client
+          .span4
+            .testimonial
+              %p "In motivating people, you've got to engage their minds and their hearts. I motivate people, I hope, by example - and perhaps by excitement, by having productive ideas to make others feel involved."
+              .whopic
+                .arrow
+                %img.centered{:alt => "client 2", :src => "images/Client2.png"}/
+                %strong
+                  John Doe
+                  %small Client
+          .span4
+            .testimonial
+              %p "Determine never to be idle. No person will have occasion to complain of the want of time who never loses any. It is wonderful how much may be done if we are always doing."
+              .whopic
+                .arrow
+                %img.centered{:alt => "client 3", :src => "images/Client3.png"}/
+                %strong
+                  John Doe
+                  %small Client
+        %p.testimonial-text
+          "Perfection is Achieved Not When There Is Nothing More to Add, But When There Is Nothing Left to Take Away"
+.section.third-section
+  .container.centered
+    .sub-section
+      .title.clearfix
+        - if I18n.locale == :fa
+          .pull-right
+            %h3= t('our-client')
+        - else
+          .pull-left
+            %h3= t('our-client')
+        %ul.client-nav.pull-right
+          %li#client-prev
+          %li#client-next
+      -#
+        %ul#clint-slider.row.client-slider
+          %li
+            %a{:href => ""}
+              %img{:alt => "client logo 1", :src => "images/clients/ClientLogo01.png"}/
+          %li
+            %a{:href => ""}
+              %img{:alt => "client logo 2", :src => "images/clients/ClientLogo02.png"}/
+          %li
+            %a{:href => ""}
+              %img{:alt => "client logo 3", :src => "images/clients/ClientLogo03.png"}/
+          %li
+            %a{:href => ""}
+              %img{:alt => "client logo 4", :src => "images/clients/ClientLogo04.png"}/
+          %li
+            %a{:href => ""}
+              %img{:alt => "client logo 5", :src => "images/clients/ClientLogo05.png"}/
+          %li
+            %a{:href => ""}
+              %img{:alt => "client logo 6", :src => "images/clients/ClientLogo02.png"}/
+          %li
+            %a{:href => ""}
+              %img{:alt => "client logo 7", :src => "images/clients/ClientLogo04.png"}/
+
+-#
+  / Newsletter section start
+  .section.third-section
+    .container.newsletter
+      .sub-section
+        .title.clearfix
+          .pull-left
+            %h3 Newsletter
+      #success-subscribe.alert.alert-success.invisible
+        %strong> Well done!
+        You successfully subscribet to our newsletter.
+      .row-fluid
+        .span5
+          %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        .span7
+          %form.inline-form
+            %input#nlmail.span8{:name => "email", :placeholder => "Enter your email", :required => "", :type => "email"}/
+            %button#subscribe.button.button-sp Subscribe
+          #err-subscribe.error.centered Please provide valid email address.
+  / Newsletter section end
+/ Contact section start
+#contact.contact
+  .section.secondary-section
+    .container
+      .title
+        %h1= t('contact')        
+    .map-wrapper
+      #map-canvas.map-canvas
+        %iframe{:height => "100%", :src => "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kKaaUJnZi5NQ?z=11", :width => "100%"}
+      .container
+        .row-fluid
+          .span5.contact-form.centered
+            %h3 Say Hello
+            #successSend.alert.alert-success.invisible
+              %strong> Well done!
+              Your message has been sent.
+            #errorSend.alert.alert-error.invisible There was an error.
+            %form#contact-form{:action => "php/mail.php"}
+              .control-group
+                .controls
+                  %input#name.span12{:name => "name", :placeholder => "* Your name...", :type => "text"}/
+                  #err-name.error.left-align Please enter name.
+              .control-group
+                .controls
+                  %input#email.span12{:name => "email", :placeholder => "* Your email...", :type => "email"}/
+                  #err-email.error.left-align Please enter valid email adress.
+              .control-group
+                .controls
+                  %textarea#comment.span12{:name => "comment", :placeholder => "* Comments..."}
+                  #err-comment.error.left-align Please enter your comment.
+              .control-group
+                .controls
+                  %button#send-mail.message-btn Send message
+    .container
+      .span9.center.contact-info
+        %div= raw @contact.first.text
+       
+        -#
+          .title
+            %h3 We Are Social
+      -#
+        .row-fluid.centered
+          %ul.social
+            %li
+              %a{:href => ""}
+                %span.icon-facebook-circled
+            %li
+              %a{:href => ""}
+                %span.icon-twitter-circled
+            %li
+              %a{:href => ""}
+                %span.icon-linkedin-circled
+            %li
+              %a{:href => ""}
+                %span.icon-pinterest-circled
+            %li
+              %a{:href => ""}
+                %span.icon-dribbble-circled
+            %li
+              %a{:href => ""}
+                %span.icon-gplus-circled
+/ Contact section edn
+/ Footer section start
+.footer
+  %p © 2015 All Rights Reserved
+/ Footer section end
+/ ScrollUp button start
+.scrollup
+  %a{:href => "#"}
+    %i.icon-up-open
+/ ScrollUp button end
+

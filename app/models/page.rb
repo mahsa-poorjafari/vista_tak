@@ -3,7 +3,7 @@ class Page < ActiveRecord::Base
 
   def title    
     if I18n.locale == :en
-      self.read_attribute("title")
+      self.read_attribute("title_en")
     else
       self.read_attribute("title_fa")
     end    
