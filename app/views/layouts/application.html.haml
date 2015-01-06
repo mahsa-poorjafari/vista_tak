@@ -16,8 +16,9 @@
               
             / This is website logo
             / Navigation button, visible on small resolution
-            %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
-              %i.icon-menu
+            -#
+              %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+                %i.icon-menu
             .language.pull-right            
               = link_to (image_tag 'flag/en.png'), locale: :en          
               = link_to (image_tag 'flag/fa.png'), locale: :fa
@@ -32,8 +33,9 @@
                       
             / This is website logo
             / Navigation button, visible on small resolution
-            %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
-              %i.icon-menu
+            -#
+              %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+                %i.icon-menu
             / Main navigation
             .nav-collapse.collapse.pull-left
               = render 'shared/menu'

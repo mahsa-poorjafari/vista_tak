@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105131755) do
+ActiveRecord::Schema.define(version: 20150104105828) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 20150105131755) do
   end
 
   create_table "pages", force: true do |t|
+    t.string   "title_en"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title_fa"
     t.text     "text_fa"
-    t.string   "title_en"
   end
 
   create_table "photos", force: true do |t|
@@ -84,20 +84,6 @@ ActiveRecord::Schema.define(version: 20150105131755) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "product_id"
-  end
-
-  create_table "pictures", force: true do |t|
-    t.string   "description_en"
-    t.string   "description_fa"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.integer  "sub_group_id"
-    t.integer  "category_id"
   end
 
   create_table "products", force: true do |t|

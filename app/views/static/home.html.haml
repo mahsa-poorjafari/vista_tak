@@ -51,7 +51,7 @@
       / Simple description for section goes here.
     .row-fluid
       - @categories.each do |category|
-        .span4{:class => I18n.locale }
+        .span3{:class => I18n.locale }
           .centered.service
             .circle-border.zoom-in
               = image_tag category.icon(:small), :class => "img-circle", :alt => category.title_fa              
@@ -69,7 +69,7 @@
       %li.filter{"data-filter" => "all"}
         = link_to t('show-all'), '#noAction', :class => I18n.locale 
       - Category.all.each do |cat|        
-        %li.filter{"data-filter" => ".category-" + cat.id.to_s}
+        %li.filter{"data-filter" => "category-" + cat.id.to_s}
           = link_to cat.title, '#noAction', :class => I18n.locale 
         
     / Start details for portfolio project 1
