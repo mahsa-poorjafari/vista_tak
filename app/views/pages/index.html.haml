@@ -1,21 +1,21 @@
-%h1 Listing pages
-
-%table
-  %tr
-    %th Title
-    %th Text
-    %th
-    %th
-    %th
-
-  - @pages.each do |page|
+.margin3{:class => I18n.locale}  
+  %h1 لیست صفحات متنی
+  = link_to 'ایجاد صفحه متنی جدید', new_page_path, :class => "btn btn-success"
+  %table.table
     %tr
-      %td= page.title
-      %td= page.text
-      %td= link_to 'Show', page
-      %td= link_to 'Edit', edit_page_path(page)
-      %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th عنوان صفحه
+      %th      
 
-%br
+    - @pages.each do |page|
+      %tr
+        %td= page.title
+       
+        - if is_admin?
+          %td
+            = link_to 'مشاهده', page, :class => "btn btn-warning"    
+            = link_to 'ویرایش', edit_page_path(page), :class => "btn btn-info" 
+            = link_to 'حذف', page, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
-= link_to 'ایجاد صفحه متنی جدید', new_page_path
+
+
+

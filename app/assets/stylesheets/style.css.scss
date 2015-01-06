@@ -44,14 +44,16 @@ a:hover {
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+    color: #000;
 }
+table tr th, table tr td {color:#000;}
 h1 {
     margin: 10px;
 }
 p {
     padding: 10px;
     font-weight: 100;
-    color: #fff;
+    color: #000;
 }
 .navbar {
     background: #252120;

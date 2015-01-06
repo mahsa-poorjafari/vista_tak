@@ -15,7 +15,7 @@
             .da-img.pull-left
               = image_tag slide.image(:small), :alt => slide.title_fa
             .pull-right{:style => "margin-top: 10%;margin-right: 20%;"}
-              %h2.fittext2= slide.title
+              %h2.fittext2{:class => I18n.locale }= slide.title
               -#
                 %h4 Clean & responsive
               %p= raw slide.description    
@@ -44,14 +44,14 @@
 #service.section.primary-section
   .container
     / Start title section
-    .title
+    .title{:class => I18n.locale }
       %h1= t('our-service')
       / Section's title goes here
       %p= t('des-service')
       / Simple description for section goes here.
     .row-fluid
       - @categories.each do |category|
-        .span4
+        .span4{:class => I18n.locale }
           .centered.service
             .circle-border.zoom-in
               = image_tag category.icon(:small), :class => "img-circle", :alt => category.title_fa              
@@ -63,14 +63,14 @@
 #portfolio.section.secondary-section
   .triangle
   .container
-    .title
+    .title{:class => I18n.locale }
       %h1= t('projects')      
     %ul.nav.nav-pills
       %li.filter{"data-filter" => "all"}
-        = link_to t('show-all'), '#noAction'
+        = link_to t('show-all'), '#noAction', :class => I18n.locale 
       - Category.all.each do |cat|        
         %li.filter{"data-filter" => ".category-" + cat.id.to_s}
-          = link_to cat.title, '#noAction'
+          = link_to cat.title, '#noAction', :class => I18n.locale 
         
     / Start details for portfolio project 1
     #single-project
@@ -91,7 +91,7 @@
 #about.section.primary-section
   .triangle
   .container
-    .title
+    .title{:class => I18n.locale }
       %h1= t('about')
     .about-text.centered      
       %p= raw @about.first.text
@@ -166,10 +166,10 @@
 .section.third-section
   .container.centered
     .sub-section
-      .title.clearfix
+      .title.clearfix{:class => I18n.locale }
         - if I18n.locale == :fa
           .pull-right
-            %h3= t('our-client')
+            %h3{:class => I18n.locale }= t('our-client')
         - else
           .pull-left
             %h3= t('our-client')
@@ -224,7 +224,7 @@
 #contact.contact
   .section.secondary-section
     .container
-      .title
+      .title{:class => I18n.locale }
         %h1= t('contact')        
     .map-wrapper
       #map-canvas.map-canvas
@@ -255,7 +255,7 @@
                   %button#send-mail.message-btn Send message
     .container
       .span9.center.contact-info
-        %div= raw @contact.first.text
+        %div{:class => I18n.locale }= raw @contact.first.text
        
         -#
           .title

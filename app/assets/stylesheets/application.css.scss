@@ -14,14 +14,15 @@
 
 
 .clear-float {clear:both}
-html, body {position:relative}
+html, body {position:relative; color:#000}
+
 .margin3 {margin:3%}
 ul.menu {list-style:none; width:70%; float:right}
 ul.menu li{display:inline}
 .fa {direction:rtl; font-family: 'open_sansregular';}
 .fa h2, .fa h3, .fa h1, .fa h4, .fa h5 {direction:rtl; font-family: 'open_sansregular';}
-.en {direction:ltr; font-family: 'leaguegothic-condensed-regular-webfont'; }
-.en h1, .en h2, .en h3, .en h4, .en h5 {direction:ltr; font-family: 'leaguegothic-condensed-regular-webfont'; }
+.en {direction:ltr; font-family: 'porta'; }
+.en h1, .en h2, .en h3, .en h4, .en h5 {direction:ltr; font-family: 'porta'; }
 .admin-menu {position:absolute;top:0; right:0; z-index:10; width:200px; background:#90EE90; 
   height:20px;
   overflow:hidden;
@@ -32,3 +33,4 @@ ul.menu li{display:inline}
 ul.admin {width:100%; float:right}
 .slide-title  {margin-top:130px}
 .language {width:100px; height:100%; }
+.clearfix h3 {color:#1E90FF}
