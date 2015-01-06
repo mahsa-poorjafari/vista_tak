@@ -10,41 +10,36 @@
     .navbar
       .navbar-inner
         .container
-          = link_to '/', :class => "brand" do
-            = image_tag 'logo.png', :height => "40", :width => "120", :alt => t('vistatech')
+          - if I18n.locale == :en 
+            = link_to '/', :class => "brand" do
+              = image_tag 'logo.png', :height => "40", :width => "120", :alt => t('vistatech')
+              
+            / This is website logo
+            / Navigation button, visible on small resolution
+            %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+              %i.icon-menu
+            .language.pull-right            
+              = link_to (image_tag 'flag/en.png'), locale: :en          
+              = link_to (image_tag 'flag/fa.png'), locale: :fa
+            / Main navigation
+            .nav-collapse.collapse.pull-right
+              = render 'shared/menu'
             
-          / This is website logo
-          / Navigation button, visible on small resolution
-          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
-            %i.icon-menu
-          / Main navigation
-          .nav-collapse.collapse.pull-right
-            = render 'shared/menu'
-            -#
-              %ul#top-navigation.nav
-                %li.active
-                  %a{:href => "#home"} Home
-                %li
-                  %a{:href => "#service"} Services
-                %li
-                  %a{:href => "#portfolio"} Portfolio
-                %li
-                  %a{:href => "#about"} About
-                %li
-                  %a{:href => "#clients"} Clients
-                %li
-                  %a{:href => "#price"} Price
-                %li
-                  %a{:href => "#contact"} Contact
-          / End main navigation
-    -#
-      %header
-        .language
-          .lan-title= 'LANGUAGE'
-          = link_to (image_tag 'flag/en.png'), locale: :en          
-          = link_to (image_tag 'flag/fa.png'), locale: :fa
-        .menu
-          = render 'shared/menu'
+          - else
+            .language.pull-left
+              = link_to (image_tag 'flag/en.png'), locale: :en          
+              = link_to (image_tag 'flag/fa.png'), locale: :fa
+                      
+            / This is website logo
+            / Navigation button, visible on small resolution
+            %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+              %i.icon-menu
+            / Main navigation
+            .nav-collapse.collapse.pull-left
+              = render 'shared/menu'
+            = link_to '/', :class => "brand", :style => "float:right" do
+              = image_tag 'logo.png', :height => "40", :width => "120", :alt => t('vistatech')  
+          
     = yield 
     - if is_admin?
       = render 'shared/admin_menu'

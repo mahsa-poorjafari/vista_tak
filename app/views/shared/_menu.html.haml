@@ -1,22 +1,22 @@
 %ul#top-navigation.nav{:class => I18n.locale}
   - if current_page?('/')
     %li{ :class => ('active' if current_page?('/'))}
-      = link_to 'صفحه اصلی', "#home"  
+      = link_to t('home-page'), "#home"  
     %li{ :class => ('active' if current_page?(Category))}
-      = link_to 'فعالیتها', "#service"  
+      = link_to t('services'), "#service"  
     %li{ :class => ('active' if current_page?(Product))}
-      = link_to 'پروژه ها', "#portfolio"  
+      = link_to t('projects'), "#portfolio"  
     - Page.all.each do |page|
       %li{ :class => ('active' if current_page?(page))}
         = link_to page.title, "#" + page.title
     
   - else
     %li{ :class => ('active' if current_page?('/'))}
-      = link_to 'صفحه اصلی', root_path  
+      = link_to t('home-page'), root_path  
     %li{ :class => ('active' if current_page?(Category))}
-      = link_to 'فعالیتها', Category   
+      = link_to t('services'), Category   
     %li{ :class => ('active' if current_page?(Product))}
-      = link_to 'پروژه ها', Product   
+      = link_to t('projects'), Product   
     - Page.all.each do |page|
       %li{ :class => ('active' if current_page?(page))}
         = link_to page.title, page
