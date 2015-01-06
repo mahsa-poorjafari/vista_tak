@@ -76,7 +76,7 @@
     #single-project
       %ul#portfolio-grid.thumbnails.row
         - SubGroup.all.each do |subgroup|
-          %li.span4.mix{:class => "category-" + subgroup.category_id.to_s}
+          %li.span3.mix{:class => "category-" + subgroup.category_id.to_s}
             .thumbnail
               - if subgroup.photos.present?
                 = image_tag subgroup.photos.first.image(:small), :alt => subgroup.category.title
