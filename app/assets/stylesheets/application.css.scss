@@ -23,7 +23,7 @@ ul.menu li{display:inline}
 .fa h2, .fa h3, .fa h1, .fa h4, .fa h5 {direction:rtl; font-family: 'open_sansregular';}
 .en {direction:ltr; font-family: 'porta'; }
 .en h1, .en h2, .en h3, .en h4, .en h5 {direction:ltr; font-family: 'porta'; }
-.admin-menu {position:absolute;top:1%; right:0; z-index:1000; width:200px; background:#90EE90; 
+.admin-menu {position:absolute;top:2%; right:0; z-index:1000; width:200px; background:#90EE90; 
   height:20px;
   overflow:hidden;
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
@@ -34,8 +34,9 @@ ul.admin {width:100%; float:right}
 .slide-title  {margin-top:130px}
 .language {
   width: 250px;
-height: 100%;
-text-align: center;
+  height: 100%;
+  text-align: center;
+  padding-top: 2%;
 }
 .clearfix h3 {color:#1E90FF}
 .brand {width:270px}
