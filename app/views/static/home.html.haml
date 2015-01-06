@@ -77,7 +77,7 @@
       %ul#portfolio-grid.thumbnails.row
         - SubGroup.all.each do |subgroup|
           %li.span3.mix{:class => "category-" + subgroup.category_id.to_s}
-            .thumbnail
+            .thumbnail{:class => I18n.locale }
               - if subgroup.photos.present?
                 = image_tag subgroup.photos.first.image(:small), :alt => subgroup.category.title
               = link_to "#single-project", :rel => "#slidingDiv", :class => "more show_hide" do

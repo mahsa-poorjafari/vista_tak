@@ -23,7 +23,7 @@
               = link_to (image_tag 'flag/en.png'), locale: :en          
               = link_to (image_tag 'flag/fa.png'), locale: :fa
             / Main navigation
-            .nav-collapse.collapse.pull-right
+            .nav-collapse.collapse.pull-right.in
               = render 'shared/menu'
             
           - else
@@ -37,7 +37,7 @@
               %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
                 %i.icon-menu
             / Main navigation
-            .nav-collapse.collapse.pull-left
+            .nav-collapse.collapse.pull-left.in
               = render 'shared/menu'
             = link_to '/', :class => "brand", :style => "float:right" do
               = image_tag 'logo.png', :height => "40", :width => "120", :alt => t('vistatech')  
