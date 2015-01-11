@@ -1,18 +1,7 @@
-%p#notice= notice
-
-%p
-  %b Title en:
-  = @category.title_en
-%p
-  %b Title fa:
-  = @category.title_fa
-%p
-  %b Description en:
-  = @category.description_en
-%p
-  %b Description fa:
-  = @category.description_fa
-
-= link_to 'Edit', edit_category_path(@category)
-\|
-= link_to 'Back', categories_path
+- if is_admin?
+  .admin-btn
+    = link_to 'ویرایش', edit_category_path(@category), :class => "btn btn-info" 
+.about-text  
+  %h3{:class => I18n.locale}= @category.title
+  .col-xs-12.show-text{:class => I18n.locale}
+    = raw @category.description

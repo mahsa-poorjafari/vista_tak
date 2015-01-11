@@ -38,5 +38,11 @@ en:
   show-all: 'Show All'
   our-client: 'Our Client'
   home-page: 'Home'
-  services: 'Services'
-  projects: 'Projects'
+  activities: 'Activities'
+  copyright: '© 2015 Vistatech Pishro'
+  msg:
+    contact-name:  'Input Your Name'
+    contact-email: 'Input Your Email'
+    contact-phone: 'Input Your Phone'
+    contact-msg: 'Input Your Text'
+    contact-btn: 'Send'

@@ -19,9 +19,8 @@ PackB::Application.routes.draw do
 
     resources :pages
   end
-  mount Ckeditor::Engine => '/ckeditor'
-  get "static/home"
-  root :to => 'static#home'
+  mount Ckeditor::Engine => '/ckeditor'  
+  root :to => 'static#index'
   get "login" => "users#login"  
   post "create_session" => "users#create_session", :as => :create_session
   get "delete_session" => "users#delete_session", :as => :delete_session

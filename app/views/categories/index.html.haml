@@ -1,26 +1,32 @@
-.margin3{:class => I18n.locale}
-  %h1 لیست دسته های فعالیت ها
+ 
+.activities{:class => I18n.locale}
+  
   - if is_admin?
-    = link_to 'ایجاد دسته جدید محصولات', new_category_path, :class => "btn btn-success"
-  %table
-    %tr
-      %th Title en
-      %th Title fa
-      %th Description en
-      %th Description fa
-      %th
-      %th
-      %th
+    .admin-btn
+      = link_to 'ایجاد دسته جدید محصولات', new_category_path, :class => "btn btn-success"
+  - @act_width = 100 / @categories.count 
+  .col-xs-12.wrapper
+    .col-xs-12
+      - @categories.each do |category|
+        .act-box{:style => "width:"+ @act_width.to_s + "%"}
+          %h2.act-title= category.title
+          - if is_admin?
+            %p.admin-link
+              = link_to 'مشاهده', category, :class => "btn btn-warning"    
+              = link_to 'ویرایش', edit_category_path(category), :class => "btn btn-info" 
+              = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
-    - @categories.each do |category|
-      %tr
-        %td= category.title_en
-        %td= category.title_fa
-        %td= category.description_en
-        %td= category.description_fa
-        %td= link_to 'مشاهده', category, :class => "btn btn-warning"    
-        %td= link_to 'ویرایش', edit_category_path(category), :class => "btn btn-info" 
-        %td= link_to 'حذف', category, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
-
-
-
+    #container
+      %ul.col-xs-12
+        - @categories.each do |category|
+          %li.pull-right{:style => "width:"+ @act_width.to_s + "%; height:400px"}
+            = link_to category do              
+              - if category.photos.present?
+                = image_tag category.photos.first.image(:horizantal),:alt => "<div class = 'act-des'>"+category.description+"</div><h3 class= 'see-more'>"+t('see-more')+"</h3>"
+              
+   
+:javascript
+  $('#container').sliphover({    
+    duration: 'slow',
+    title: 'alt'    
+  });

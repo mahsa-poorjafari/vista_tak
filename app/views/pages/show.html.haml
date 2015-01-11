@@ -1,11 +1,11 @@
-.margin3{:class => I18n.locale}  
-  
+- if is_admin?
+  .admin-btn
+    = link_to 'ویرایش صفحه', edit_page_path(@page), :class => "btn btn-info" 
+ 
 
-  %h1
-    = @page.title
-  %p  
+- if @page.title_en == 'Contact Us'
+  = render 'pages/contact_us'
+- else
+  .about-text
     =raw @page.text
-  - if is_admin?
-    = link_to 'ویرایش', edit_page_path(@page), :class => "btn btn-info" 
-    \|
-    = link_to 'بازگشت', :back
+

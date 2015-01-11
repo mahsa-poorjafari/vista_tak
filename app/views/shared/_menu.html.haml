@@ -1,25 +1,20 @@
-%ul#top-navigation.nav{:class => I18n.locale}
-  - if current_page?('/')
-    %li{ :class => ('active' if current_page?('/'))}
-      = link_to t('home-page'), "#home"  
-    %li{ :class => ('active' if current_page?(Category))}
-      = link_to t('services'), "#service"  
-    %li{ :class => ('active' if current_page?(Product))}
-      = link_to t('projects'), "#portfolio"  
-    - Page.all.each do |page|
-      %li{ :class => ('active' if current_page?(page))}
-        - if page.title_en == 'About us'
-          = link_to page.title, '#about'
-        - elsif page.title_en == 'Contact us'
-          = link_to page.title, '#contact'
+
+.navbar-inner
+  .menu-button.pull-right
+    .menu-icon
+    .language
+      = link_to (image_tag 'flag/en.png'), locale: :en          
+      = link_to (image_tag 'flag/fa.png'), locale: :fa
+  .logo.bg-white
+    = link_to '/', :class => "brand" do
+      = image_tag 'logo.png', :height => "40", :width => "120", :alt => t('vistatech')                            
     
-  - else
-    %li{ :class => ('active' if current_page?('/'))}
-      = link_to t('home-page'), root_path  
-    %li{ :class => ('active' if current_page?(Category))}
-      = link_to t('services'), Category   
-    %li{ :class => ('active' if current_page?(Product))}
-      = link_to t('projects'), Product   
-    - Page.all.each do |page|
-      %li{ :class => ('active' if current_page?(page))}
-        = link_to page.title, page
+  .menu-bar.menu-bar-open
+    %ul#nav-items{:class => I18n.locale}  
+      %li{ :class => ('active' if current_page?('/'))}
+        = link_to t('home-page'), root_path  
+      %li{ :class => ('active' if current_page?(Category))}
+        = link_to t('activities'), Category
+      - Page.all.each do |page|
+        %li{ :class => ('active' if current_page?(page))}
+          = link_to page.title, page

@@ -4,18 +4,22 @@
       %ul
         - @page.errors.each do |attr, msg|
           %li= msg
-
-  .field
-    = f.label 'عنوان به انگلیسی:'
-    = f.text_field :title_en
-  .field
-    = f.label 'عنوان به فارسی:'
-    = f.text_field :title_fa
-  .field
-    = f.label 'متن به فارسی:'
-    = f.cktext_area :text
-  .field
-    = f.label 'متن به انگلیسی:'
-    = f.cktext_area :text_fa
-  .actions
-    = f.submit 'Save'
+  .col-xs-12
+  .col-xs-6.pull-right
+    .form-group
+      = f.label 'عنوان به انگلیسی:', :class => "control-label"
+      = f.text_field :title_en, :class => "form-control"
+    .form-group
+      = f.label 'عنوان به فارسی:', :class => "control-label"
+      = f.text_field :title_fa, :class => "form-control"
+  .col-xs-12     
+    .form-group
+      = f.label 'متن به فارسی:', :class => "control-label"
+      .editor
+       = f.cktext_area :text
+    .form-group
+      = f.label 'متن به انگلیسی:', :class => "control-label"
+      .editor
+       = f.cktext_area :text_fa
+    .form-group
+      = f.submit 'ثبت', :class => "btn btn-primary"

@@ -30,5 +30,12 @@ fa:
   show-all: 'نمایش همه'
   our-client: 'مشتریان ما'
   home-page: 'صفحه اصلی'
-  services: 'خدمات'
-  projects: 'پروژه ها'
+  activities: 'فعالیتها'
+  copyright: 'تمامی حقوق مادی و معنوی این سایت متعلق به ویستاتک پیشرو می باشد.'
+  msg:
+    contact-name: 'نام خود را وارد کنید'
+    contact-email: 'ایمیل خود را وارد کنید.'
+    contact-phone: 'تلفن تماس خود را وارد کنید.'
+    contact-msg: 'متن پیام خود را وارد کنید.'
+    contact-btn: 'ارسال'
+  
