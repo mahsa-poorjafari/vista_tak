@@ -13,7 +13,6 @@
 //= require jquery
 //= require ahoy
 //= require jquery_ujs
-//= require turbolinks
 //= require ckeditor/init
 //= require jquery_nested_form
 //= require_tree .
