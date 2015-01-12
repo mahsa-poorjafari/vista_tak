@@ -20,6 +20,10 @@
 
 
 $( document ).ready(function() {
+  $('#container').sliphover({    
+    duration: 'slow',
+    title: 'alt'    
+  });
   $('ul#nav-items li').click(function(){
     var ThisId = $(this).attr('id');
     if (ThisId == 'show-home') {
@@ -34,16 +38,21 @@ $( document ).ready(function() {
       
     }
   });
-  $('#container').sliphover({    
-    duration: 'slow',
-    title: 'alt'    
-  });
+  
   
   //$('.menu-button').click(function(){
   //  $('.menu-bar').removeClass('menu-bar-open').addClass('menu-bar-close');
   //  $('.main-div .logo').removeClass('bg-white ').addClass('bg-transparent');
     
   //});
+  $(':submit').click(function(e) {
+    $(':text.needed, textarea.needed').each(function() {
+      if ($(this).val().length == 0) {
+        $(this).css('border', '2px solid red');
+        e.preventDefault();
+      }
+    });
+  });
 
 });
 
