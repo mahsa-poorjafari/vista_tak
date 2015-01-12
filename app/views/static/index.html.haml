@@ -1,1 +1,8 @@
-
+.show-activities.show-boxes
+  = render 'categories/activity'
+.show-about-us.show-boxes
+  = render 'pages/about_us', :page => @about.first
+.show-contact-us.show-boxes
+  = render 'pages/contact_us', :page => @contact.first
+  
+  

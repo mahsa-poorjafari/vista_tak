@@ -148,7 +148,7 @@
             return $container;
         },
         _createOverlay: function($container, options, $target) {
-            var $overlay = $('<div class="sliphoveritemTitle" style="width:100%;height:' + this.options.height + ';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:' + this.options.fontColor + ';background-color:' + this.options.backgroundColor + ';">').html('<div style="position:relative;width:100%;">' + $target.attr(options.title) + '</div>'),
+            var $overlay = $('<div class="sliphoveritemTitle" style="width:100%;height:' + this.options.height + ';box-sizing:border-box;-moz-box-sizing:border-box;padding:5px;overflow:auto;position:absolute;color:' + this.options.fontColor + ';background-color:#016c93;opacity:.7">').html('<div style="position:relative;width:100%;">' + $target.attr(options.title) + '</div>'),
                 $innerContainer = $overlay.children();
             //initialize elements' style
             if (this.options.flip) {

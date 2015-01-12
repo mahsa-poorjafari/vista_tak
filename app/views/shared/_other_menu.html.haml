@@ -1,4 +1,3 @@
-
 .navbar-inner
   .menu-button.pull-right
     .menu-icon
@@ -8,13 +7,15 @@
   .logo.bg-white
     = link_to '/', :class => "brand" do
       = image_tag 'logo.png', :height => "40", :width => "120", :alt => t('vistatech')                            
-    
+  - @about = Page.where(title_en: 'About Us')
+  - @contact = Page.where(title_en: 'Contact Us')  
   .menu-bar.menu-bar-open
     %ul#nav-items{:class => I18n.locale}  
       %li{ :class => ('active' if current_page?('/')), :id => 'show-home'}
-        %span=  t('home-page')
+        = link_to  t('home-page'), root_path
       %li{ :class => ('active' if current_page?(Category)), :id => 'show-activities'}
-        %span=  t('activities')
+        =link_to  t('activities'), root_path
       - Page.all.each do |page|
         %li{ :class => ('active' if current_page?(page)), :id => ( page.title_en == @about.first.title_en ? 'show-about-us' : 'show-contact-us' )}
-          %span=  page.title
+          = link_to  page.title, root_path
+
