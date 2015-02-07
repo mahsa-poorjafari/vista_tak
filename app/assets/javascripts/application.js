@@ -22,7 +22,7 @@ $( document ).ready(function() {
   $('#container').sliphover({    
     duration: 'slow',
     title: 'alt'    
-  });
+  }); 
   $('ul#nav-items li').click(function(){
     var ThisId = $(this).attr('id');
     if (ThisId == 'show-home') {
@@ -31,6 +31,7 @@ $( document ).ready(function() {
       
     }
     else {
+      
       $('.navbar').removeClass('main-page-menu').addClass('other-page');
       $('.show-boxes').fadeOut(500);
       $('.'+ThisId).fadeIn(1000);
@@ -54,4 +55,3 @@ $( document ).ready(function() {
   });
 
 });
-

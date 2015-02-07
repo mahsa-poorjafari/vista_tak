@@ -3,29 +3,34 @@
   %head
     %title= t('vistatech') 
     = stylesheet_link_tag    "application", media: "all"
-    = javascript_include_tag "application"  
+    
     = csrf_meta_tags 
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png', :title => "ویستا تک پیشرو"
 
   %body    
     .main-div
-      - if current_page?('/')
-        .navbar.main-page-menu.pull-right
-          = render 'shared/menu' 
-      
+      - if I18n.locale == :en
+
       - else
-        .navbar.other-page.pull-right
-          = render 'shared/other_menu' 
-              
-               
-      
-              
-      = yield 
+        .blue-border-right.col-xs-12.pull-right{:style => "position:absolute;"}
+          = yield 
       
       .footer{:class => I18n.locale}
-        .copyright= t('copyright')
+        .col-xs-12
+          %p.fa= 'تهران، سعادت آباد، چهارراه سرو، ابتدای بلوار پاکنژاد، خیابان 18 متری مطهری، پلاک 24، واحد 7'
+        .col-xs-12.contact-info
+          .col-xs-5.right-box
+            %p.fa دورنگار: ۲۲۱۱۶۲۹۳ - ۰۲۱
+            %p.fa  ایمیل: info@VTP.co.IR
+          .col-xs-1{:style => "padding:0"}
+            .hr-blue-line
+          .col-xs-5.left-box
+            %p.fa تلفن: ۲۲۰۷۳۹۱۴ - ۰۲۱
+            %p.fa کدپستی: ۱۹۹۸۹۸۳۴۸۳
+        
+          .copyright= t('copyright')
     - if is_admin?
       = render 'shared/admin_menu'
   
-    
+  = javascript_include_tag "application"  
     
