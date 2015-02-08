@@ -13,13 +13,10 @@
   .col-xs-3.pull-right
     = image_tag 'logo.png'
     %p ویستا تک پیشرو (سهامی خاص)
-    %p Vistech Pishro
+    %p.en{:style => "font-size:33px"} Visatech Pishro
     
 .search-div.pull-right{:class => I18n.locale}
-  .col-xs-2.pull-right   
-    = image_tag 'home.png', :class => "home-icon"
-    = image_tag 'email.png', :class => "email-icon"
-    = image_tag 'phone.png', :class => "phone-icon"
+  
   .col-xs-3#search.pull-right
     = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
       .search_on_google
@@ -27,6 +24,11 @@
           %span.google-submit.col-xs-2.pull-right{:class => I18n.locale}
             =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale, :style => "background:#016c93"
           .col-xs-10{:style => "padding:0"}= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale.to_s + " form-control"
+  .clear-float
+  .col-xs-12
+    = image_tag 'home.png', :class => "home-icon"
+    = image_tag 'email.png', :class => "email-icon"
+    = image_tag 'phone.png', :class => "phone-icon"
 .menu-bar
   = render 'shared/menu'
 

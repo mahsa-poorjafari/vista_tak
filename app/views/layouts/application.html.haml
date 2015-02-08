@@ -19,15 +19,18 @@
         .col-xs-12
           %p.fa= 'تهران، سعادت آباد، چهارراه سرو، ابتدای بلوار پاکنژاد، خیابان 18 متری مطهری، پلاک 24، واحد 7'
         .col-xs-12.contact-info
-          .col-xs-5.right-box
-            %p.fa دورنگار: ۲۲۱۱۶۲۹۳ - ۰۲۱
-            %p.fa  ایمیل: info@VTP.co.IR
-          .col-xs-1{:style => "padding:0"}
-            .hr-blue-line
-          .col-xs-5.left-box
-            %p.fa تلفن: ۲۲۰۷۳۹۱۴ - ۰۲۱
-            %p.fa کدپستی: ۱۹۹۸۹۸۳۴۸۳
-        
+          .col-xs-3
+          .col-xs-6
+            .col-xs-5.right-box
+              %p.fa دورنگار: ۲۲۱۱۶۲۹۳ - ۰۲۱
+              %p.fa  ایمیل: info@VTP.co.IR
+            .col-xs-1{:style => "padding:0"}
+              .hr-blue-line
+            .col-xs-5.left-box
+              %p.fa تلفن: ۲۲۰۷۳۹۱۴ - ۰۲۱
+              %p.fa کدپستی: ۱۹۹۸۹۸۳۴۸۳
+          .col-xs-3
+        .col-xs-12
           .copyright= t('copyright')
     - if is_admin?
       = render 'shared/admin_menu'
