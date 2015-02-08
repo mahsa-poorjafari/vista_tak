@@ -21,7 +21,7 @@ html,body {position:relative; color:#000 }
 .en h1, .en h2, .en h3, .en h4, .en h5 {direction:ltr; font-family: Arial; }
 .set-center {margin-right:auto; margin-left:auto}
 .main-div { 
-  position:relative; width:100%; min-height:654px; overflow:hidden;
+  position:relative; width:100%; height:100vh; overflow:hidden;
   background-image: url(image-path('fabg.jpg'));
   background-repeat: no-repeat;
   background-attachment: fixed;
