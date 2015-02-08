@@ -1,5 +1,5 @@
 
-.navbar-inner.col-xs-2.pull-right  
+.navbar-inner.col-xs-2{:class => (I18n.locale == :en ? "pull-left" : "pull-right") }
   %ul#nav-items{:class => I18n.locale}  
     - unless current_page?('/')
       %li{ :class => ('active' if current_page?('/'))}
