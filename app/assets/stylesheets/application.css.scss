@@ -62,8 +62,9 @@ html,body {position:relative; color:#000 }
   padding-top:1%;
   background-image: url(image-path('main-menu.png'));
   background-repeat: repeat;
-  position:absolute; width:100%; height:155px; top:10%; right:0;  left:0;}
-.logo-box p {text-align:center; width:100%; font-size:1.5em; color:#000; margin:0;}
+  position:absolute; width:100%; height:24vh; top:10%; right:0;  left:0;}
+.logo-box p {text-align:center; width:100%; font-size:1.8vw; color:#000; margin:0;}
+.logo-box p.en {font-size:2.2vw;}
 .logo-box img {width:80%; margin-bottom:2%;}
 
 .social-link {position:absolute; top:15px; width:100%; height:50px;
