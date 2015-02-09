@@ -6,17 +6,18 @@
       = image_tag 'facebook.png'
       = image_tag 'twetter.png'
     .col-xs-7.pull-left
-    .col-xs-2.globe      
+    .col-xs-2.globe{:class => I18n.locale}
       = link_to (image_tag 'globee.png'), locale: :fa
   .logo-box{:class => I18n.locale}
-    .col-xs-3.pull-left
+    .col-xs-4.pull-left
       = image_tag 'logo.png'
-      %p.fa ویستا تک پیشرو (سهامی خاص)
-      %p.en{:style => "font-size:33px"} Vistatech Pishro
+      .col-xs-11.pull-left{:style => "padding:0"}
+        %p.fa ویستا تک پیشرو (سهامی خاص)
+        %p.en{:style => "font-size:31px"} Vistatech Pishro
       
   .search-div.pull-left{:class => I18n.locale}
     
-    .col-xs-3#search.pull-left
+    .col-xs-4#search.pull-left
       = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
         .search_on_google
           .google-field.form-group
@@ -29,7 +30,7 @@
       = image_tag 'email.png', :class => "email-icon"
       = image_tag 'phone.png', :class => "phone-icon"
   .menu-bar
-    = render 'shared/menu'
+    = render 'shared/menu_en'
 
 - else
   .social-link
@@ -39,15 +40,16 @@
       = image_tag 'facebook.png'
       = image_tag 'twetter.png'
     .col-xs-7.pull-right
-    .col-xs-2.globe
+    .col-xs-2.globe{:class => I18n.locale}
       
       = link_to (image_tag 'globee.png'), locale: :en
       
   .logo-box{:class => I18n.locale}
-    .col-xs-3.pull-right
-      = image_tag 'logo.png'
-      %p ویستا تک پیشرو (سهامی خاص)
-      %p.en{:style => "font-size:33px"} Vistatech Pishro
+    .col-xs-4.pull-right
+      = image_tag 'logo.png'      
+      .col-xs-9.pull-right{:style => "padding:0"}
+        %p ویستا تک پیشرو (سهامی خاص)
+        %p.en{:style => "font-size:31px"} Vistatech Pishro
       
   .search-div.pull-right{:class => I18n.locale}
     

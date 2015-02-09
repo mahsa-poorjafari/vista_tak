@@ -12,17 +12,21 @@
       - if I18n.locale == :en
         .blue-border-left.col-xs-12.pull-left{:style => "position:absolute;"}
           = yield 
+          .footer{:class => I18n.locale}
+            
+            = render 'shared/footer_en'
+            
+            .col-xs-12
+              .copyright= t('copyright')
       - else
         .blue-border-right.col-xs-12.pull-right{:style => "position:absolute;"}
           = yield 
       
-      .footer{:class => I18n.locale}
-        - if I18n.locale == :en
-          = render 'shared/footer_en'
-        - else
-          = render 'shared/footer_fa'
-        .col-xs-12
-          .copyright= t('copyright')
+          .footer{:class => I18n.locale}
+            
+            = render 'shared/footer_fa'
+            .col-xs-12
+              .copyright= t('copyright')
 
     - if is_admin?
       = render 'shared/admin_menu'
