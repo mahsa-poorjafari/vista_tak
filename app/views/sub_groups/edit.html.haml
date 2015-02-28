@@ -1,5 +1,7 @@
-.margin3{:class => I18n.locale}
-  %h1 ویرایش زیرگروه
-  = link_to 'Show', @sub_group, :class => "btn btn-warning"      
-  = render 'form'
+.margin3.admin-pages{:class => I18n.locale}
+  .col-xs-6.pull-right
+    %h1 ویرایش زیرگروه
+  .col-xs-6.pull-right
+    = link_to 'Show', @sub_group, :class => "btn btn-warning"      
+  .col-xs-12= render 'form'
 

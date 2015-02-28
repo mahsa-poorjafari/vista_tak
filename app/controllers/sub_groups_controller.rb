@@ -1,6 +1,6 @@
 class SubGroupsController < ApplicationController
   before_action :set_sub_group, only: [:show, :edit, :update, :destroy]
-
+  layout 'other'
   # GET /sub_groups
   # GET /sub_groups.json
   def index
@@ -69,7 +69,7 @@ class SubGroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sub_group_params
-      params.require(:sub_group).permit(:title_en, :title_fa, :description_en, :description_fa, :category_id,
+      params.require(:sub_group).permit(:title_en, :title_fa, :description_en, :description_fa, :category_id, :bg_image, :bg_image_en,
       photos_attributes: [:id, :image, :description_fa, :description_en, :sub_group_id, :_destroy, :_update])
     end
 end

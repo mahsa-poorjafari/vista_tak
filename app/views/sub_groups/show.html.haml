@@ -1,18 +1,16 @@
-%p#notice= notice
-
-%p
-  %b Title en:
-  = @sub_group.title_en
-%p
-  %b Title fa:
-  = @sub_group.title_fa
-%p
-  %b Description en:
-  = @sub_group.description_en
-%p
-  %b Description fa:
-  = @sub_group.description_fa
-
-= link_to 'Edit', edit_sub_group_path(@sub_group)
-\|
-= link_to 'Back', sub_groups_path
+.margin3{:class => I18n.locale}
+  - if notice 
+    .col-xs-6.pull-right.alert.alert-success
+      = notice
+  - if I18n.locale == :en &&  @sub_group.bg_image_en.present? 
+    .bg-image= image_tag @sub_group.bg_image_en(:original)
+  - elsif @sub_group.bg_image.present? 
+    .bg-image= image_tag @sub_group.bg_image(:original)
+  .col-xs-4.show-sub-group{:class => I18n.locale, :style =>"position:absolute"}
+    .show-title-sub-group{:class => I18n.locale}
+      %h2= @sub_group.title   
+    .clear-float
+    .sub-group-discript= raw @sub_group.description
+    - if is_admin?
+      = link_to 'ویرایش', edit_sub_group_path(@sub_group)
+      

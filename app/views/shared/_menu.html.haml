@@ -1,10 +1,6 @@
 
-.navbar-inner.col-xs-2{:class => (I18n.locale == :en ? "pull-left" : "pull-right") }
-  %ul#nav-items{:class => I18n.locale}  
-    - unless current_page?('/')
-      %li{ :class => ('active' if current_page?('/'))}
-        %span=  t('home-page')
-      .horisantal-line
+.navbar-inner.col-xs-12{:class => (I18n.locale == :en ? "pull-left" : "pull-right") }
+  %ul#nav-items{:class => I18n.locale}      
     %li{ :class => ('active' if current_page?(Category))}
       %span=  t('activities')
       .horisantal-line
@@ -16,4 +12,4 @@
         %span=  page.title
         .horisantal-line.horisantal-line
 
-.col-xs-10.pull-right
+

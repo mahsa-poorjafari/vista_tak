@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105131755) do
+ActiveRecord::Schema.define(version: 20150228070411) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -132,6 +132,14 @@ ActiveRecord::Schema.define(version: 20150105131755) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+    t.string   "bg_image_file_name"
+    t.string   "bg_image_content_type"
+    t.integer  "bg_image_file_size"
+    t.datetime "bg_image_updated_at"
+    t.string   "bg_image_en_file_name"
+    t.string   "bg_image_en_content_type"
+    t.integer  "bg_image_en_file_size"
+    t.datetime "bg_image_en_updated_at"
   end
 
   create_table "users", force: true do |t|

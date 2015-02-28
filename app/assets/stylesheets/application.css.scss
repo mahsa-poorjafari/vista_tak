@@ -37,14 +37,16 @@ html,body {position:relative; color:#000 }
 .blue-border-left  {position:absolute; width:100%; border-left: 100px solid #016c93; 
   left:0;
   height:100%}
-.footer {position:absolute; bottom:0; width:100%; height:90px; background:#1A1A1A; opacity:.8; color:#fff;
-  border-top:2px solid #016c93;
+.footer {position:absolute; bottom:0; width:100%; height:80px;  color:#fff;
+  border-top:6px solid #016c93;
   text-align:center;
   
   }
+.footer.other_footer {height:95px;}
 .footer.fa {left:0;}
 .footer.en { right:0; padding-top:1%}
 .footer p {margin:0; font-size:15px;}
+.footer .other p {color:#000; font-weight: bold;font-size:18px;}
 .footer p.en {margin:0; font-size:13px;}
 .hr-blue-line {
   width:8px; height:30px; 
@@ -57,8 +59,10 @@ html,body {position:relative; color:#000 }
 .contact-info .col-xs-5 p{ padding:0; padding-bottom:0; margin-bottom:0}
 .contact-info .right-box {text-align:center; padding:0}
 .contact-info .left-box {text-align:center; padding:0}
+.contact-info.other .left-box p .contact-info.other .right-box p {color:#000}
 .copyright{clear:both; padding:0; padding-right:4%; width:100%; text-align:center; }
 .logo-box {
+  z-index:20;
   padding-top:1%;
   background-image: url(image-path('main-menu.png'));
   background-repeat: repeat;
@@ -69,6 +73,7 @@ html,body {position:relative; color:#000 }
 
 .social-link {position:absolute; top:15px; width:100%; height:50px;
   right:0; left:0;
+  z-index:20;
   }
 
 .social-link  .social-icon {margin-top:18px;}
@@ -109,7 +114,7 @@ padding: 0;
 width: 100%;
 text-align: center;
 }
-.search-div {position:absolute; top:240px; right:0; left:0}
+.search-div {position:absolute; top:240px; right:0; left:0; z-index:20;}
 .search-div.fa {text-align:right}
 .search-div img {margin:2px; -webkit-transition: -webkit-transform .51s;
   -moz-transition: -moz-transform .5s;
@@ -129,20 +134,21 @@ span.google-submit.fa {padding:0; text-align:left; margin-left:0;}
 span.google-submit.en {padding:0; text-align:right; margin-right:0;}
 .google-field.form-group {margin-bottom:0;}
 .google-field.form-group  .form-control{border-radius:0;}
-.menu-bar {position:absolute; bottom:17%; width:100%; left:0; right:0;}
+.menu-bar {position:absolute; bottom:17%; width:15%; left:0; right:0; z-index:20;}
 .menu-bar ul#nav-items {list-style:none; padding-right:1%;}
 .menu-bar ul#nav-items.en {padding-left:1%}
 .menu-bar ul#nav-items li{color:#000; font-size:1.2em; position:relative; padding-top:20px;}
 .menu-bar ul#nav-items li:hover{cursor:pointer; }
 
-ul .horisantal-line {position:relative; width:130px;  border: 2px solid #fff; background: #016c93;
-  height:7px;  
+ul .horisantal-line {position:relative; width:130px;  border: 4px solid #fff; background: #016c93;
+  height:10px;  
   border-radius: 3px;
   -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
   transition: all .5s;
   }
 ul.fa .horisantal-line {margin-right:-25px;}
 ul.en .horisantal-line {margin-left:-25px;}
+.menu-bar ul#nav-items span{font-weight:bold; font-size:1.2em}
 .menu-bar ul#nav-items.fa li:hover .horisantal-line{margin-right:0;}
 .menu-bar ul#nav-items.en li:hover .horisantal-line{margin-left:0;}
 .blue-space {padding:0; width:1%; 
@@ -152,4 +158,37 @@ ul.en .horisantal-line {margin-left:-25px;}
   float:left}
 .blue-space.fa {margin-left:5px; }
 .blue-space.en {margin-left:-5px; }
+
+.bg-image img {position:absolute; width:100%; right:0; left:0;
+  top:0; bottom:0;
+  height:100%;}
+.admin-pages {  
+  position:absolute; width:100%; right:0; left:0;background:#fff; z-index:50;
+  top:0;
+  height:80%; overflow-y:scroll; }
+.other-menu .search-div{margin-top:2%}
+.other-menu .menu-bar{bottom:14%}
+.show-sub-group {
+  top: 35%;    right: 25%;  
+  left: 25%;}
+.show-sub-group.fa{float:right;}
+.show-sub-group.en{float:left;}
+.show-title-sub-group h2{border-bottom:4px solid #016c93; width: 50%; }
+.show-title-sub-group.fa h2{ text-align:left; float:left;}
+.show-title-sub-group.en h2{ text-align:right; float:right;}
+.sub-group-discript p{ font-size:1.2em; text-align:justify; color:#000}
+.icon-link {
+  padding-right:0;
+  padding-left:0;
+  }
+.icon-link span.icon-tooltip {
+  display:none;
+  background:transparent; 
+  text-align:center;
+  -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+  transition: all 1s;}
+.icon-link:hover {text-decoration:none}
+.icon-link:hover span.icon-tooltip {  
+  display:block;
+  background:#1A1A1A; color:#1E90FF;}
 

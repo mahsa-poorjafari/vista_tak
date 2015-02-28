@@ -41,6 +41,8 @@ en:
   activities: 'Activities'
   copyright: '© 2015 Vistatech Pishro'
   related-link: 'Related Links'
+  email: 'Email'
+  phone: 'Phone'
   msg:
     contact-name:  'Input Your Name'
     contact-email: 'Input Your Email'
