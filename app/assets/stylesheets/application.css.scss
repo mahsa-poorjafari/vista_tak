@@ -114,7 +114,7 @@ padding: 0;
 width: 100%;
 text-align: center;
 }
-.search-div {position:absolute; top:240px; right:0; left:0; z-index:20;}
+.search-div {position:absolute; top:35%; right:0; left:0; z-index:20;}
 .search-div.fa {text-align:right}
 .search-div img {margin:2px; -webkit-transition: -webkit-transform .51s;
   -moz-transition: -moz-transform .5s;
@@ -130,17 +130,19 @@ text-align: center;
   transform: rotateY( 180deg );}
 .search-div .email-icon, .search-div .phone-icon {margin-top:20px;}
 #search {padding:0;}
+#search.fa {padding-right:1%;}
+#search.en {padding-left:1%;}
 span.google-submit.fa {padding:0; text-align:left; margin-left:0;}
 span.google-submit.en {padding:0; text-align:right; margin-right:0;}
 .google-field.form-group {margin-bottom:0;}
 .google-field.form-group  .form-control{border-radius:0;}
-.menu-bar {position:absolute; bottom:17%; width:15%; left:0; right:0; z-index:20;}
+.menu-bar {position:absolute; bottom:17%; width:20%; left:0; right:0; z-index:20;}
 .menu-bar ul#nav-items {list-style:none; padding-right:1%;}
 .menu-bar ul#nav-items.en {padding-left:1%}
 .menu-bar ul#nav-items li{color:#000; font-size:1.2em; position:relative; padding-top:20px;}
 .menu-bar ul#nav-items li:hover{cursor:pointer; }
 
-ul .horisantal-line {position:relative; width:130px;  border: 4px solid #fff; background: #016c93;
+ul .horisantal-line {position:relative; width:130px;  border: 3px solid #fff; background: #016c93;
   height:10px;  
   border-radius: 3px;
   -webkit-transition: all .5s; /* For Safari 3.1 to 6.0 */
@@ -148,7 +150,7 @@ ul .horisantal-line {position:relative; width:130px;  border: 4px solid #fff; ba
   }
 ul.fa .horisantal-line {margin-right:-25px;}
 ul.en .horisantal-line {margin-left:-25px;}
-.menu-bar ul#nav-items span{font-weight:bold; font-size:1.2em}
+.menu-bar ul#nav-items span{font-weight:bold; font-size:1em}
 .menu-bar ul#nav-items.fa li:hover .horisantal-line{margin-right:0;}
 .menu-bar ul#nav-items.en li:hover .horisantal-line{margin-left:0;}
 .blue-space {padding:0; width:1%; 
@@ -166,7 +168,7 @@ ul.en .horisantal-line {margin-left:-25px;}
   position:absolute; width:100%; right:0; left:0;background:#fff; z-index:50;
   top:0;
   height:80%; overflow-y:scroll; }
-.other-menu .search-div{margin-top:2%}
+.other-menu .search-div{position:absolute; top:35%; right:0; left:0; z-index:20;}
 .other-menu .menu-bar{bottom:14%}
 .show-sub-group {
   top: 35%;    right: 25%;  
