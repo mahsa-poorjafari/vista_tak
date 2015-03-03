@@ -1,0 +1,96 @@
+/* Large desktop */
+@media (min-width: 1200px) {  }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+  .blue-border-right {border-right: 50px solid #016c93;}
+  .social-link {width:100%; top:0}
+  .social-link .social-icon {margin-top: 8px; width:70%}
+  .social-link .col-xs-7.pull-right{display:none}
+  .social-link .globe{margin-top: 8px;}
+  
+  .logo-box .col-xs-4 {width:100%; text-align:center;}
+  .logo-box .col-xs-10.pull-right {width:100%; text-align:center}
+  .logo-box .col-xs-10.pull-right p{font-size:1.5em}
+  .search-div #search {width:100%;}
+  .menu-bar {display:none}
+  .menu-responsive{display:block; 
+    background-image: url('nav-icon.png');
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10%;
+    z-index:100;
+    top:5%;
+    overflow:hidden;
+    -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+    transition: all 1s;
+    }
+  .menu-responsive:hover {
+    cursor:pointer;
+    background-image: url('over-nav-icon.png');
+    background-repeat:no-repeat;
+    width:400px;
+    height:300px;
+    top:0; 
+    background:#1A1A1A;
+    }
+  .menu-responsive ul  {list-style:none; padding:1%; margin-right:5px;}
+  ul .horisantal-line {width:100%; border: 1px solid #fff; height:5px}
+  ul.fa .horisantal-line {margin-right:-30px}
+  .menu-responsive ul  li{height:60px;-webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+    transition: all 1s;text-align:center;}
+  .menu-responsive ul  li:hover{color:#1E90FF;}
+  .menu-responsive ul  li:hover span{text-align:center;color:#1E90FF;}
+  .menu-responsive ul li span {font-size:2em; margin:2%; color:#fff; height:70px;
+  -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+    transition: all 1s;
+  }
+}
+/*
+@media all and (max-width: 740px) {  
+  h1 { font-size: 4.5em; color:#FF0000}  
+  .servic-descriptipn.text { font-size: 4.5em; color:#FF0000}  
+  h3 { font-size: 2.2em;color:#FF0000 }  
+  h2 { display: block; text-align: center; color:#FF0000}  
+  p { padding: 0; }  
+}
+@media all and (max-width: 570px) {  
+  .servic-descriptipn.text { color:#A020F0}  
+  h1 { color:#A020F0}  
+  h3 { color:#A020F0}  
+  h2 { display: block; text-align: center; color:#A020F0}  
+  p { padding: 0; }  
+}  
+ 
+@media all and (max-width: 480px) {  
+  .servic-descriptipn.text { color:#00FF00 }  
+  h1 { color:#00FF00 }  
+  h3 { color:#00FF00}  
+  h2 { display: block; text-align: center;color:#00FF00 }  
+  p { padding: 0; }  
+}  
+   
+@media all and (max-width: 320px) {  
+  .servic-descriptipn.text { color:#0000FF}  
+  h1 { color:#0000FF}  
+  h3 { color:#0000FF}  
+  h2 { display: block; text-align: center; color:#0000FF}  
+  p { padding: 0; }  
+}  
+*/  
+/** iPhone only **/ 
+/*
+@media all and (max-device-width: 480px) {  
+  h1 { font-size: 4.5em; }  
+  h3 { font-size: 2.2em; }  
+  h2 { display: block; text-align: center; }  
+  p { padding: 0; }  
+}
+*/
