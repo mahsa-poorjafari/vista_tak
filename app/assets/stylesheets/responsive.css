@@ -52,6 +52,9 @@
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
     transition: all 1s;
   }
+  .footer {height:100px}
+  .col-xs-12.contact-info {padding:0;}
+  .col-xs-12.contact-info .contact-details{width:100%}
 }
 /*
 @media all and (max-width: 740px) {  
