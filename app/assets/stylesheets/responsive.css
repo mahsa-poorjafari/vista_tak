@@ -2,22 +2,31 @@
 @media (min-width: 1200px) {  }
  
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {  }
+@media (min-width: 768px) and (max-width: 979px) { 
+  .blue-border-right {border-right: 70px solid #016c93;}
+  .logo-box .col-xs-10.pull-right {width:100%;}
+  .logo-box .col-xs-10.pull-right p{font-size:1.2em}
+  .logo-box .col-xs-11.pull-left p{font-size:1.2em}
+  .logo-box img {width:100%}
+  .col-xs-12.contact-info .col-xs-3 {width:10%;}
+  .col-xs-12.contact-info .col-xs-6.contact-details {width:80%;}
+  .main-div.en {background-position-x:-200px}
+  .menu-bar {width:25%;}
+ }
  
 /* Landscape phone to portrait tablet */
-@media (max-width: 767px) { }
- 
-/* Landscape phones and down */
-@media (max-width: 480px) { 
+@media (max-width: 767px) {
   .blue-border-right {border-right: 50px solid #016c93;}
   .social-link {width:100%; top:0}
   .social-link .social-icon {margin-top: 8px; width:70%}
   .social-link .col-xs-7.pull-right{display:none}
+  .social-link .col-xs-7.pull-left{display:none}
   .social-link .globe{margin-top: 8px;}
   
   .logo-box .col-xs-4 {width:100%; text-align:center;}
   .logo-box .col-xs-10.pull-right {width:100%; text-align:center}
   .logo-box .col-xs-10.pull-right p{font-size:1.5em}
+  .logo-box .col-xs-11.pull-left p{font-size:1.5em}
   .search-div #search {width:100%;}
   .menu-bar {display:none}
   .menu-responsive{display:block; 
@@ -25,13 +34,15 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    right: -10%;
+    
     z-index:100;
     top:5%;
     overflow:hidden;
     -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
     transition: all 1s;
     }
+  .menu-responsive.fa {right: -6%;}
+  .menu-responsive.en {left: -6%;}
   .menu-responsive:hover {
     cursor:pointer;
     background-image: url('over-nav-icon.png');
@@ -40,6 +51,7 @@
     height:300px;
     top:0; 
     background:#1A1A1A;
+    
     }
   .menu-responsive ul  {list-style:none; padding:1%; margin-right:5px;}
   ul .horisantal-line {width:100%; border: 1px solid #fff; height:5px}
@@ -55,6 +67,64 @@
   .footer {height:100px}
   .col-xs-12.contact-info {padding:0;}
   .col-xs-12.contact-info .contact-details{width:100%}
+  .col-xs-12.contact-info .contact-details .col-xs-5.right-box, .col-xs-12.contact-info .contact-details .col-xs-5.left-box {width:48%}
+  .logo-box img {width:50%}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+  .blue-border-right {border-right: 50px solid #016c93;}
+  .social-link {width:100%; top:0}
+  .social-link .social-icon {margin-top: 8px; width:70%}
+  .social-link .col-xs-7.pull-right{display:none}
+  .social-link .col-xs-7.pull-left{display:none}
+  .social-link .globe{margin-top: 8px;}
+  
+  .logo-box .col-xs-4 {width:100%; text-align:center;}
+  .logo-box .col-xs-10.pull-right {width:100%; text-align:center}
+  .logo-box .col-xs-10.pull-right p{font-size:1.5em}
+  .logo-box .col-xs-11.pull-left p{font-size:1.5em}
+  .search-div #search {width:100%;}
+  .menu-bar {display:none}
+  .menu-responsive{display:block; 
+    background-image: url('nav-icon.png');
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    
+    z-index:100;
+    top:5%;
+    overflow:hidden;
+    -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+    transition: all 1s;
+    }
+  .menu-responsive.fa {right: -10%;}
+  .menu-responsive.en {left: -10%;}
+  .menu-responsive:hover {
+    cursor:pointer;
+    background-image: url('over-nav-icon.png');
+    background-repeat:no-repeat;
+    width:400px;
+    height:300px;
+    top:0; 
+    background:#1A1A1A;
+    
+    }
+  .menu-responsive ul  {list-style:none; padding:1%; margin-right:5px;}
+  ul .horisantal-line {width:100%; border: 1px solid #fff; height:5px}
+  ul.fa .horisantal-line {margin-right:-30px}
+  .menu-responsive ul  li{height:60px;-webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+    transition: all 1s;text-align:center;}
+  .menu-responsive ul  li:hover{color:#1E90FF;}
+  .menu-responsive ul  li:hover span{text-align:center;color:#1E90FF;}
+  .menu-responsive ul li span {font-size:2em; margin:2%; color:#fff; height:70px;
+  -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
+    transition: all 1s;
+  }
+  .footer {height:100px}
+  .col-xs-12.contact-info {padding:0;}
+  .col-xs-12.contact-info .contact-details{width:100%}
+  .col-xs-12.contact-info .contact-details .col-xs-5.right-box, .col-xs-12.contact-info .contact-details .col-xs-5.left-box {width:48%}
 }
 /*
 @media all and (max-width: 740px) {  

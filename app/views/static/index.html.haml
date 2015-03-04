@@ -31,6 +31,8 @@
       = image_tag 'phone.png', :class => "phone-icon"
   .menu-bar
     = render 'shared/menu_en'
+  .menu-responsive{:class => I18n.locale}
+    = render 'shared/menu'
 
 - else
   .social-link
@@ -67,7 +69,7 @@
       = image_tag 'phone.png', :class => "phone-icon"
   .menu-bar
     = render 'shared/menu'
-  .menu-responsive
+  .menu-responsive{:class => I18n.locale}
     = render 'shared/menu'
 
   
