@@ -44,7 +44,7 @@ html,body {position:relative; color:#000 }
   text-align:center;
   
   }
-.footer.other_footer {height:95px;}
+.footer.other_footer {height:91px;}
 .footer.fa {left:0;}
 .footer.en { right:0; padding-top:1%}
 .footer p {margin:0; font-size:15px;}
@@ -178,10 +178,10 @@ ul.en .horisantal-line {margin-left:-25px;}
   left: 25%;}
 .show-sub-group.fa{float:right;}
 .show-sub-group.en{float:left;}
-.show-title-sub-group h3{border-bottom:4px solid #016c93; width: auto; }
+.show-title-sub-group h3{border-bottom:4px solid #016c93; width: auto; color:#000}
 .show-title-sub-group.fa h3{ text-align:left; float:left;}
 .show-title-sub-group.en h3{ text-align:right; float:right;}
-.sub-group-discript p{ font-size:1.2em; text-align:justify; color:#000}
+.sub-group-discript p, .sub-group-discript span{ font-size:1.2em; text-align:justify; color:#000}
 .icon-link {
   padding-right:0;
   padding-left:0;
