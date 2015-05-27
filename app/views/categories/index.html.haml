@@ -5,8 +5,9 @@
     .admin-btn
       = link_to 'ایجاد دسته جدید محصولات', new_category_path, :class => "btn btn-success"
   - @act_width = 100 / @categories.count 
+  
   .col-xs-12.wrapper
-    .col-xs-12
+    .col-xs-12{:style => "display:none"}
       - @categories.each do |category|
         .act-box{:style => "width:"+ @act_width.to_s + "%"}
           %h2.act-title= category.title
@@ -21,6 +22,7 @@
         - @categories.each do |category|
           %li.pull-right{:style => "width:"+ @act_width.to_s + "%; height:400px"}
             = link_to category do              
+              %h2.act-title= category.title
               - if category.photos.present?
                 = image_tag category.photos.first.image(:horizantal),:alt => "<div class = 'act-des'>"+category.description+"</div><h3 class= 'see-more'>"+t('see-more')+"</h3>"
               
