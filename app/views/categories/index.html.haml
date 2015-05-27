@@ -20,7 +20,7 @@
     #container
       %ul.col-xs-12
         - @categories.each do |category|
-          %li.pull-right{:style => "width:"+ @act_width.to_s + "%; height:400px"}
+          %li.pull-right.cat-box{:style => "width:"+ @act_width.to_s + "%; height:400px"}
             = link_to category do              
               %h2.act-title= category.title
               - if category.photos.present?

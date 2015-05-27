@@ -3,7 +3,8 @@
   %ul#nav-items{:class => I18n.locale}  
     
     %li{ :class => ('active' if current_page?(Category))}
-      %span=  t('activities')
+      = link_to Category do
+        %span=  t('activities')
       .horisantal-line
     %li{ :class => ('active' if current_page?(Category))}        
       %span=  t('related-link')

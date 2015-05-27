@@ -13,15 +13,18 @@
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png', :title => "ویستا تک پیشرو"
 
   %body    
+    
     .main-div{:class => I18n.locale}
       - if I18n.locale == :en
         .blue-border-left.col-xs-12.pull-left{:style => "position:absolute;"}
+        
           = yield 
           .footer{:class => I18n.locale}
             
             = render 'shared/footer_en'
 
       - else
+        
         .blue-border-right.col-xs-12.pull-right{:style => "position:absolute;"}
           = yield 
       
