@@ -14,6 +14,8 @@
 
 
 .clear-float {clear:both}
+a{text-decoration:none}
+a:hover{color:#000}
 html,body {position:relative; color:#000 }
 .fa {direction:rtl; font-family: 'open_sansregular';}
 .fa h2, .fa h3, .fa h1, .fa h4, .fa h5 {direction:rtl; font-family: 'open_sansregular';}
@@ -166,7 +168,7 @@ ul.en .horisantal-line {margin-left:-25px;}
   top:0; bottom:0;
   height:100%;}
 .admin-pages {  
-  position:absolute; width:90%; right:0; left:0;background:#fff; z-index:50;
+  position:absolute; width:100%; right:0; left:0;background:#fff; z-index:50;
   top:0;
   height:85%; overflow-y:scroll; }
 .other-menu .search-div{position:absolute; top:35%; right:0; left:0; z-index:20;}
@@ -198,15 +200,27 @@ ul.en .horisantal-line {margin-left:-25px;}
 .menu-responsive {display:none}
 .activities  {width: 80%;
 position: absolute;
+height:450px;
 bottom: 0;
 }
 .activities.fa {left: 5%;
-right:15%}
-.activities.en {left: 15%;
+right:20%}
+.activities.en {left: 20%;
 right:5%}
-.cat-box {overflow:hidden}
+.cat-box {overflow:hidden;  height:300px; position: relative;}
+.cat-box .cat-sub{
+  -webkit-transition: all .5s; /* Safari */
+    transition: all .5s;  
+  color: rgb(255, 255, 255);
+background-color: rgb(1, 108, 147);
+opacity: 0.7; width:100%; 
+  overflow:hidden;  height:0%; position: absolute; top:60px; }
+.cat-box .cat-sub p{text-align:center; margin-top:10%}
+.cat-box .cat-sub a{text-align:center; font-weight:bold; font-size:1.2em;color:#fff; }
+.cat-box .cat-sub a:hover{ color:#000;}
+.cat-box:hover .cat-sub {height:100%; cursor:pointer}
 .cat-box a{text-decoration:none}
 .cat-box a:hover{color:#fff; text-decoration:none}
-.cat-box .act-title{color:#000}
+.cat-box .act-title{color:#000; text-align:center}
 .cat-box .act-title:hover{color:#fff}
 .admin-btn {text-align:center}

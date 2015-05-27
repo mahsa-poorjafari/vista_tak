@@ -17,18 +17,20 @@
               = link_to 'ویرایش', edit_category_path(category), :class => "btn btn-info" 
               = link_to 'حذف', category, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
-    #container
+    #container1
       %ul.col-xs-12
         - @categories.each do |category|
-          %li.pull-right.cat-box{:style => "width:"+ @act_width.to_s + "%; height:400px"}
+          %li.pull-right.cat-box{:style => "width:"+ @act_width.to_s + "%;"}
             = link_to category do              
               %h2.act-title= category.title
               - if category.photos.present?
+                = image_tag category.photos.first.image(:horizantal)              
+            .cat-sub
+              - if category.sub_groups.present?
+                - category.sub_groups.each do |sub_group|                
+                  %p= link_to sub_group.title,  sub_group
+                  
+              -#
                 = image_tag category.photos.first.image(:horizantal),:alt => "<div class = 'act-des'>"+category.description+"</div><h3 class= 'see-more'>"+t('see-more')+"</h3>"
               
-   
-:javascript
-  $('#container').sliphover({    
-    duration: 'slow',
-    title: 'alt'    
-  });
+
