@@ -20,9 +20,13 @@
   
     .form-group
       = f.label 'تصویر پس زمینه این بخش را برای زبان فارسی وارد کنید.', :class => "control-label"
+      - if @sub_group.bg_image.present?
+        = image_tag @sub_group.bg_image(:small)
       = f.file_field :bg_image, :class => "form-control"
     .form-group
       = f.label 'تصویر پس زمینه این بخش را برای زبان انگلیسی وارد کنید.', :class => "control-label"
+      - if @sub_group.bg_image_en.present?
+        = image_tag @sub_group.bg_image_en(:small)
       = f.file_field :bg_image_en, :class => "form-control"
     
   

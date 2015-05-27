@@ -165,9 +165,9 @@ ul.en .horisantal-line {margin-left:-25px;}
   top:0; bottom:0;
   height:100%;}
 .admin-pages {  
-  position:absolute; width:100%; right:0; left:0;background:#fff; z-index:50;
+  position:absolute; width:90%; right:0; left:0;background:#fff; z-index:50;
   top:0;
-  height:80%; overflow-y:scroll; }
+  height:85%; overflow-y:scroll; }
 .other-menu .search-div{position:absolute; top:35%; right:0; left:0; z-index:20;}
 .other-menu .menu-bar{bottom:14%}
 .show-sub-group {
@@ -175,9 +175,9 @@ ul.en .horisantal-line {margin-left:-25px;}
   left: 25%;}
 .show-sub-group.fa{float:right;}
 .show-sub-group.en{float:left;}
-.show-title-sub-group h2{border-bottom:4px solid #016c93; width: 50%; }
-.show-title-sub-group.fa h2{ text-align:left; float:left;}
-.show-title-sub-group.en h2{ text-align:right; float:right;}
+.show-title-sub-group h3{border-bottom:4px solid #016c93; width: auto; }
+.show-title-sub-group.fa h3{ text-align:left; float:left;}
+.show-title-sub-group.en h3{ text-align:right; float:right;}
 .sub-group-discript p{ font-size:1.2em; text-align:justify; color:#000}
 .icon-link {
   padding-right:0;
