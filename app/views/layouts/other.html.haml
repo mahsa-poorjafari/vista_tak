@@ -9,20 +9,20 @@
 
   %body
     
-    .main-div{:class => I18n.locale}
+    .main-div{:class =>  (params[:controller] == 'categories') ? 'active-page' : 'other-pages'}
       - if I18n.locale == :en
         .blue-border-left.col-xs-12.pull-left{:style => "position:absolute;"}
           .other-menu= render 'static/index_menu'
           = yield 
-          .footer.other_footer{:class => I18n.locale}            
-            = render 'shared/other_footer_en'
+          .footer{:class => I18n.locale}            
+            = render 'shared/footer_en'
 
       - else
         .blue-border-right.col-xs-12.pull-right{:style => "position:absolute;"}
           .other-menu= render 'static/index_menu'
           = yield       
-          .footer.other_footer{:class => I18n.locale}            
-            = render 'shared/other_footer_fa'
+          .footer{:class => I18n.locale, :id => ('active-page' if params[:controller] == 'sub_groups')}
+            = render 'shared/footer_fa'
             
     - if is_admin?
       = render 'shared/admin_menu'

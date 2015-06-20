@@ -2,7 +2,11 @@
   - if is_admin?
     .admin-btn
       = link_to 'ویرایش', edit_category_path(@category), :class => "btn btn-info" 
-  .about-text  
-    %h3{:class => I18n.locale}= @category.title
-    .col-xs-12.show-text{:class => I18n.locale}
-      = raw @category.description
+  .show-sub-group#category-activity 
+    .show-title-sub-group
+      %h3{:class => I18n.locale}= @category.title
+      .clear-float
+      .sub-group-discript
+        = raw @category.description
+      - if is_admin?
+        = link_to 'ویرایش', edit_sub_group_path(@category)

@@ -1,16 +1,30 @@
 
 .navbar-inner.col-xs-12{:class => (I18n.locale == :en ? "pull-left" : "pull-right") }
   %ul#nav-items{:class => I18n.locale}      
-    %li{ :class => ('active' if current_page?(Category))}
+    %li{ :class => ('active' if current_page?(root_path))}
+      = link_to root_path do
+        %span=  t('home-page')
+      .horisantal-line
+    %li{ :class => ('active' if current_page?(Category)), :id => 'avtivities'}
       = link_to Category do
         %span=  t('activities')
       .horisantal-line
+      %ul.sub-menu#sub-activities
+        - Category.all.each do |cat|
+          %li.sub-item.col-xs-3
+            =link_to cat.title, cat
+    .clear-float        
     %li{ :class => ('active' if current_page?(Category))}        
       %span=  t('related-link')
       .horisantal-line
-    - Page.all.each do |page|
-      %li{ :class => ('active' if current_page?(page))}
-        %span=  page.title
-        .horisantal-line.horisantal-line
+    %li{ :id => 'contact-pages'}
+      %span=  t('be-connect-us')
+      .horisantal-line
+      %ul.sub-menu#sub-pages
+        - Page.all.each do |page|
+          %li.sub-item.col-xs-4.pull-right{ :class => ('active' if current_page?(page))}
+            =link_to  page.title, page
+            
+        .clear-float
 
 

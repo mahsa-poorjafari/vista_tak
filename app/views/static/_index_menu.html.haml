@@ -15,7 +15,7 @@
         %p.fa ویستا تک پیشرو (سهامی خاص)
         %p.en Vistatech Pishro
       
-  .search-div.col-xs-3.pull-left{:class => I18n.locale, :style => "padding:0;"}
+  .search-div.col-xs-3.pull-left#search-div{:class => I18n.locale, :style => "padding:0;"}
     
     .col-xs-10#search.pull-left{:class => I18n.locale}
       = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
@@ -29,9 +29,7 @@
       = link_to root_path, :class => "icon-link col-xs-2", :style => "padding:0" do
         = image_tag 'home.png', :class => "home-icon"
         %span.icon-tooltip= t('home-page')
-      = link_to root_path, :class => "icon-link col-xs-2", :style => "padding:0" do
-        = image_tag 'email.png', :class => "email-icon"
-        %span.icon-tooltip= t('email')
+      
       = link_to root_path, :class => "icon-link col-xs-2", :style => "padding:0" do
         = image_tag 'phone.png', :class => "phone-icon"
         %span.icon-tooltip= t('phone')
@@ -59,7 +57,7 @@
         %p ویستا تک پیشرو (سهامی خاص)
         %p.en Vistatech Pishro
       
-  .search-div.col-xs-3.pull-right{:class => I18n.locale, :style => "padding:0;"}
+  .search-div.col-xs-3.pull-right#search-div{:class => I18n.locale, :style => "padding:0;"}
     
     .col-xs-10#search.pull-right{:class => I18n.locale}
       = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
@@ -70,12 +68,15 @@
             .col-xs-10{:style => "padding:0"}= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale.to_s + " form-control", :style => "background:#ccc"
     .clear-float
     .col-xs-12
-      = image_tag 'home.png', :class => "home-icon"
-      = image_tag 'email.png', :class => "email-icon"
+      = link_to root_path do
+        = image_tag 'home.png', :class => "home-icon"
+      
       = image_tag 'phone.png', :class => "phone-icon"
   .clear-float
   .menu-bar
     = render 'shared/menu'
 
-  
+  .menu-responsive{:class => I18n.locale}
+    = render 'shared/menu'
+
   

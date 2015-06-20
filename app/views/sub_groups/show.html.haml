@@ -3,10 +3,14 @@
     .col-xs-6.pull-right.alert.alert-success
       = notice
   - if I18n.locale == :en &&  @sub_group.bg_image_en.present? 
-    .bg-image= image_tag @sub_group.bg_image_en(:original)
+    .bg-image
+      = image_tag @sub_group.bg_image_en(:original), :id => 'sub_group_normal'
+      
   - elsif @sub_group.bg_image.present? 
-    .bg-image= image_tag @sub_group.bg_image(:original)
-  .col-xs-4.show-sub-group{:class => I18n.locale, :style =>"position:absolute"}
+    .bg-image
+      = image_tag @sub_group.bg_image(:original)
+      
+  .show-sub-group{:class => I18n.locale}
     .show-title-sub-group{:class => I18n.locale}
       %h3= @sub_group.title   
     .clear-float

@@ -26,8 +26,9 @@
             .col-xs-10{:style => "padding:0"}= text_field_tag :q, '', placeholder: 'Google Search',  :class => I18n.locale.to_s + " form-control"
     .clear-float
     .col-xs-12
-      = image_tag 'home.png', :class => "home-icon"
-      = image_tag 'email.png', :class => "email-icon"
+      = link_to root_path do
+        = image_tag 'home.png', :class => "home-icon"
+      
       = image_tag 'phone.png', :class => "phone-icon"
   .menu-bar
     = render 'shared/menu_en'
@@ -64,8 +65,9 @@
             .col-xs-10{:style => "padding:0"}= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale.to_s + " form-control"
     .clear-float
     .col-xs-12
-      = image_tag 'home.png', :class => "home-icon"
-      = image_tag 'email.png', :class => "email-icon"
+      = link_to root_path do
+        = image_tag 'home.png', :class => "home-icon"
+      
       = image_tag 'phone.png', :class => "phone-icon"
   .menu-bar
     = render 'shared/menu'

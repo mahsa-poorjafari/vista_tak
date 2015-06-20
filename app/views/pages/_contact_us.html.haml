@@ -1,17 +1,15 @@
-.contact-us.col-xs-12
+.contact-us.col-xs-10
   - if I18n.locale == :fa
     .col-xs-6.pull-right{:style => "padding:0"}
-      .col-xs-12{:style => "padding:0"}
+      .col-xs-12
         .contact-form{:class => I18n.locale}= render 'shared/msg_form'
-      .col-xs-12{:style => "padding:0"}
-        .contact-text{:class => I18n.locale}= raw page.text
+      
     .col-xs-6{:style => "padding:0"}
-      %iframe{:height => "450px", :src =>  "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kKaaUJnZi5NQ&z=13", :width => "100%"}
+      %iframe{:height => "300px", :src =>  "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kKaaUJnZi5NQ&z=13", :width => "100%"}
   - else
-    .col-xs-6.pull-left{:style => "padding:0"}
-      .col-xs-12{:style => "padding:0"}
+    .col-xs-6.pull-left
+      .col-xs-12
         .contact-form{:class => I18n.locale}= render 'shared/msg_form'
-      .col-xs-12{:style => "padding:0"}
-        .contact-text{:class => I18n.locale}= raw page.text
-    .col-xs-6{:style => "padding:0"}
-      %iframe{:height => "450px", :src =>  "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kKaaUJnZi5NQ&z=13", :width => "100%"}
+      
+    .col-xs-6
+      %iframe{:height => "430px", :src =>  "https://www.google.com/maps/d/embed?mid=zbDi3iZxywyM.kKaaUJnZi5NQ&z=13", :width => "100%"}

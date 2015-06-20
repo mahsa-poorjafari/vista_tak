@@ -3,8 +3,8 @@
     = link_to 'ویرایش صفحه', edit_page_path(@page), :class => "btn btn-info" 
  
 
-- if @page.title_en == 'Contact us' || @page.title_en == 'Contact Us'
-  = render 'pages/contact_us'
+- if @page.title_en == 'Contact us' || @page.id == 2
+  = render 'pages/contact_us', :page => @page
 - else
   .about-text
     =raw @page.text
