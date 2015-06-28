@@ -8,11 +8,11 @@
     %li{ :class => ('active' if current_page?(Category)), :id => 'avtivities'}
       = link_to Category do
         %span=  t('activities')
-      
-      %ul.sub-menu#sub-activities
-        - Category.all.each do |cat|
-          %li.sub-item.col-xs-3
-            =link_to cat.title, cat
+      - if current_page?('/')
+        %ul.sub-menu#sub-activities
+          - Category.all.each do |cat|
+            %li.sub-item.col-xs-3
+              =link_to cat.title, cat
       .horisantal-line
     .clear-float        
     %li{ :class => ('active' if current_page?(Category))}        
@@ -20,11 +20,11 @@
       .horisantal-line
     %li{ :id => 'contact-pages'}
       %span=  t('be-connect-us')
-      
-      %ul.sub-menu#sub-pages
-        - Page.all.each do |page|
-          %li.sub-item.col-xs-4.pull-right{ :class => ('active' if current_page?(page))}
-            =link_to  page.title, page
+      - if current_page?('/')
+        %ul.sub-menu#sub-pages
+          - Page.all.each do |page|
+            %li.sub-item.col-xs-4.pull-right{ :class => ('active' if current_page?(page))}
+              =link_to  page.title, page
       .horisantal-line      
     .clear-float
 

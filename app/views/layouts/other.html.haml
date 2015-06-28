@@ -9,19 +9,19 @@
 
   %body
     
-    .main-div{:class =>  (params[:controller] == 'categories') ? 'active-page' : 'other-pages'}
+    .main-div{:class =>  (params[:controller] == 'categories') ? 'active-page' : 'other-pages', :id => (current_page?('/') ? 'main-bg-image' : 'main-bg-white')}
       - if I18n.locale == :en
         .blue-border-left.col-xs-12.pull-left{:style => "position:absolute;"}
-          .other-menu= render 'static/index_menu'
+          .other-menu{:class => I18n.locale}= render 'static/index_menu'
           = yield 
-          .footer{:class => I18n.locale}            
+          .footer{:class => I18n.locale, :id => current_page?('/') ? "font-color-white" : "font-color-black" }            
             = render 'shared/footer_en'
 
       - else
         .blue-border-right.col-xs-12.pull-right{:style => "position:absolute;"}
           .other-menu= render 'static/index_menu'
           = yield       
-          .footer{:class => I18n.locale, :id => ('active-page' if params[:controller] == 'sub_groups')}
+          .footer{:class => I18n.locale, :id => ( params[:controller] == 'sub_groups' ? 'active-page' : 'deactive-page') + ' ' + (current_page?('/') ? "font-color-white" : "font-color-black") }
             = render 'shared/footer_fa'
             
     - if is_admin?

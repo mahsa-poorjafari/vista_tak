@@ -17,7 +17,11 @@
       = f.label 'گروه مربوط را انتخاب کنید.', :class => "control-label"  
       = f.select :category_id, options_for_select(Category.all.collect{ |u| [u.title_fa, u.id] }), prompt: "گروه فعالیت ها را انتخاب کنید.", :class => "form-control"
       
-  
+    .form-group.alert.alert-info
+      = f.label 'آیکن مرتبط.', :class => "control-label"
+      - if @sub_group.icon.present?
+        = image_tag @sub_group.icon(:small)
+      = f.file_field :icon, :class => "form-control"
     .form-group
       = f.label 'تصویر پس زمینه این بخش را برای زبان فارسی وارد کنید.', :class => "control-label"
       - if @sub_group.bg_image.present?

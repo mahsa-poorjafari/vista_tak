@@ -30,7 +30,7 @@
         = image_tag 'home.png', :class => "home-icon"
       
       = image_tag 'phone.png', :class => "phone-icon"
-  .menu-bar
+  .menu-bar{:class => I18n.locale}
     = render 'shared/menu_en'
   .menu-responsive{:class => I18n.locale}
     = render 'shared/menu'

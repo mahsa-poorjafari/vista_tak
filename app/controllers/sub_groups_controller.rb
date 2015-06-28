@@ -69,7 +69,8 @@ class SubGroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sub_group_params
-      params.require(:sub_group).permit(:title_en, :title_fa, :description_en, :description_fa, :category_id, :bg_image, :bg_image_en,
+      params.require(:sub_group).permit(:title_en, :title_fa, :description_en, :description_fa, :category_id, 
+      :bg_image, :bg_image_en, :icon,
       photos_attributes: [:id, :image, :description_fa, :description_en, :sub_group_id, :_destroy, :_update])
     end
 end

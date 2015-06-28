@@ -7,6 +7,17 @@
       %h3{:class => I18n.locale}= @category.title
       .clear-float
       .sub-group-discript
-        = raw @category.description
+        - if @category.sub_groups.present?
+          .col-xs-6{:class => I18n.locale == :fa ? "pull-right" : "pull-left" }
+            - @category.sub_groups.limit(4).each do |sub_group|            
+              .col-xs-12
+                %span= image_tag sub_group.icon(:small), :width => "50"
+                %span= sub_group.title
+          .col-xs-6{:class => I18n.locale == :fa ? "pull-right" : "pull-left" }  
+            - @category.sub_groups.offset(4).each do |sub_group|            
+              .col-xs-12
+                %span= image_tag sub_group.icon(:small), :width => "50"
+                %span= sub_group.title
+            
       - if is_admin?
         = link_to 'ویرایش', edit_sub_group_path(@category)

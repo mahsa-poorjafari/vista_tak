@@ -34,7 +34,7 @@
         = image_tag 'phone.png', :class => "phone-icon"
         %span.icon-tooltip= t('phone')
       
-  .menu-bar
+  .menu-bar{:class => I18n.locale}
     = render 'shared/menu_en'
   .menu-responsive
     = render 'shared/menu_en'

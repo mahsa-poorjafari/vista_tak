@@ -14,12 +14,12 @@
 
   %body    
     
-    .main-div{:class => I18n.locale }
+    .main-div{:class => I18n.locale, :id => (current_page?('/') ? 'main-bg-image' : 'main-bg-white')}
       - if I18n.locale == :en
         .blue-border-left.col-xs-12.pull-left{:style => "position:absolute;"}
         
           = yield 
-          .footer{:class => I18n.locale}
+          .footer{:class => I18n.locale, :id => current_page?('/') ? "font-color-white" : "font-color-black" }
             
             = render 'shared/footer_en'
 
@@ -28,7 +28,7 @@
         .blue-border-right.col-xs-12.pull-right{:style => "position:absolute;"}
           = yield 
       
-          .footer{:class => I18n.locale}
+          .footer{:class => I18n.locale, :id => current_page?('/') ? "font-color-white" : "font-color-black" }
             
             = render 'shared/footer_fa'
             

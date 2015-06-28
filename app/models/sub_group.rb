@@ -11,6 +11,9 @@ class SubGroup < ActiveRecord::Base
   validates_attachment_content_type :bg_image_en, :content_type => ["image/jpg", "image/jpeg", "image/png"]
   validates :title_fa, :title_en, :presence => {:message => 'فیلدهای ضروری را پر کنید'}
   validates :title_fa, :title_en, :uniqueness => {:message => 'عنوان تکراری است'}
+  
+  has_attached_file :icon, :styles => { :medium => "200x200>", :small => "50x50>"}
+  validates_attachment_content_type :icon, :content_type => ["image/jpg", "image/jpeg", "image/png"]
   def title
     if I18n.locale == :en
       self.read_attribute("title_en")
