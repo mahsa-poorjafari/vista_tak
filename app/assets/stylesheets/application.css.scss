@@ -236,6 +236,8 @@ right:20%}
 right:0}
 .cat-box {overflow:hidden;  height:300px; position: relative; width:25%}
 .cat-box img {height:300px; width:100%}
+.cat-box span.admin-link {position:absolute; z-index:100}
+table.table tr th {direction:rtl; text-align:right}
 .cat-box .cat-sub{
   -webkit-transition: all .5s; /* Safari */
     transition: all .5s;  

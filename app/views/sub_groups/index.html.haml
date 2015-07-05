@@ -6,18 +6,20 @@
     %tr
       %th ردیف
       %th عنوان      
+      %th گروه مربوط     
       %th عملیات
 
     - @sub_groups.each_with_index do |sub_group, i|
       %tr
         %td= (i+1)
         %td= sub_group.title
+        %td= sub_group.category.title
         
         %td
           - if is_admin?
-            = link_to 'مشاهده', sub_group
-            = link_to 'ویرایش', edit_sub_group_path(sub_group)
-            = link_to 'حذف', sub_group, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to 'مشاهده', sub_group, :class => "btn btn-warning"   
+            = link_to 'ویرایش', edit_sub_group_path(sub_group), :class => "btn btn-info" 
+            = link_to 'حذف', sub_group, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
 
 

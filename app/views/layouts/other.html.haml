@@ -9,7 +9,7 @@
 
   %body
     
-    .main-div{:class =>  (params[:controller] == 'categories') ? 'active-page' : 'other-pages', :id => (current_page?('/') ? 'main-bg-image' : 'main-bg-white')}
+    .main-div{:class =>  (params[:controller] == 'categories') ? 'active-page' : 'other-pages', :id => (current_page?('/') || current_page?(Category)  ? 'main-bg-image' : 'main-bg-white')}
       - if I18n.locale == :en
         .blue-border-left.col-xs-12.pull-left{:style => "position:absolute;"}
           .other-menu{:class => I18n.locale}= render 'static/index_menu'

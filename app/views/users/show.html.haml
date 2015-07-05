@@ -1,12 +1,13 @@
-%p#notice= notice
+.activities{:class => I18n.locale}
+  %p#notice= notice
 
-%p
-  %b Email:
-  = @user.email
-%p
-  %b Password:
-  = @user.password
+  %p
+    %b ایمیل:
+    = @user.email
+  %p
+    %b نام کاربری
+    = @user.user_name
 
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+  = link_to 'Edit', edit_user_path(@user)
+  \|
+  = link_to 'Back', users_path

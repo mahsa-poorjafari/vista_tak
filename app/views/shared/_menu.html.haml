@@ -5,7 +5,7 @@
       = link_to root_path do
         %span=  t('home-page')
       .horisantal-line
-    %li{ :class => ('active' if current_page?(Category)), :id => 'avtivities'}
+    %li{ :class => ('active' if current_page?(Category)), :id => ('avtivities' if current_page?(root_path) )}
       = link_to Category do
         %span=  t('activities')
       - if current_page?('/')
@@ -18,7 +18,7 @@
     %li{ :class => ('active' if current_page?(Category))}        
       %span=  t('related-link')
       .horisantal-line
-    %li{ :id => 'contact-pages'}
+    %li{ :id => ('contact-pages' if current_page?(root_path) )}
       %span=  t('be-connect-us')
       - if current_page?('/')
         %ul.sub-menu#sub-pages

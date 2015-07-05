@@ -15,7 +15,7 @@
       = f.text_field :title_fa, :class => "form-control"
     .form-group
       = f.label 'گروه مربوط را انتخاب کنید.', :class => "control-label"  
-      = f.select :category_id, options_for_select(Category.all.collect{ |u| [u.title_fa, u.id] }), prompt: "گروه فعالیت ها را انتخاب کنید.", :class => "form-control"
+      = f.select :category_id, options_for_select(Category.all.collect{ |u| [u.title_fa, u.id] }, :selected => @sub_group.category_id), prompt: "گروه فعالیت ها را انتخاب کنید.", :class => "form-control"
       
     .form-group.alert.alert-info
       = f.label 'آیکن مرتبط.', :class => "control-label"
@@ -33,15 +33,15 @@
         = image_tag @sub_group.bg_image_en(:small)
       = f.file_field :bg_image_en, :class => "form-control"
     
-  
-    .form-group.col-xs-12 
-      %p{:class => I18n.locale}="برای افزودن تصاویر برای این پروژه دکمه زیر را فشار دهید و در کادری که نمایش داده می شود تصویر مورد نظر را انتخاب کنید:"
-      %p{ :style=> "color:#ec523f", :class => I18n.locale}= "دقت داشته باشید حجم هر عکس باید کمتر از ۵۰۰کیلوبایت باشد."
-      = f.link_to_add content_tag(:span, "افزودن تصویر", :class => "btn btn-warning" ), :photos, :id => "add_new_picture"
-    .col-xs-12 
-      = f.fields_for :photos do |picture|  
-        .col-xs-6{:style => "border:2px solid #1E90FF; background:#ADD8E6"}
-          = render "shared/upload_image_form", :picture => picture
+    -#
+      .form-group.col-xs-12 
+        %p{:class => I18n.locale}="برای افزودن تصاویر برای این پروژه دکمه زیر را فشار دهید و در کادری که نمایش داده می شود تصویر مورد نظر را انتخاب کنید:"
+        %p{ :style=> "color:#ec523f", :class => I18n.locale}= "دقت داشته باشید حجم هر عکس باید کمتر از ۵۰۰کیلوبایت باشد."
+        = f.link_to_add content_tag(:span, "افزودن تصویر", :class => "btn btn-warning" ), :photos, :id => "add_new_picture"
+      .col-xs-12 
+        = f.fields_for :photos do |picture|  
+          .col-xs-6{:style => "border:2px solid #1E90FF; background:#ADD8E6"}
+            = render "shared/upload_image_form", :picture => picture
   .col-xs-6
     .form-group
       = f.label 'توضیحات به انگلیسی:', :class => "control-label"

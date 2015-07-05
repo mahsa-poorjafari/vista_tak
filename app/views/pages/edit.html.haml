@@ -1,7 +1,10 @@
-%h1 Editing page
+.margin3.admin-pages{:class => I18n.locale}
+  
+  
+  %h1 ویرایش صفحه
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @page
-\|
-= link_to 'Back', pages_path
+  = link_to 'Show', @page
+  \|
+  = link_to 'Back', pages_path

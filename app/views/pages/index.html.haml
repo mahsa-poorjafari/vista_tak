@@ -1,6 +1,9 @@
-.margin3{:class => I18n.locale}  
+.activities{:class => I18n.locale}
+  
+
   %h1 لیست صفحات متنی
-  = link_to 'ایجاد صفحه متنی جدید', new_page_path, :class => "btn btn-success"
+  - if is_admin?
+    = link_to 'ایجاد صفحه متنی جدید', new_page_path, :class => "btn btn-success"
   %table.table
     %tr
       %th عنوان صفحه

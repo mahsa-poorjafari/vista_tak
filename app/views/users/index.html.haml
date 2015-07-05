@@ -1,21 +1,23 @@
-%h1 Listing users
+.activities{:class => I18n.locale}
+  %h1 لیست کاربران
 
-%table
-  %tr
-    %th Email
-    %th Password
-    %th
-    %th
-    %th
-
-  - @users.each do |user|
+  %table.table
     %tr
-      %td= user.email
-      %td= user.password
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th ایمیل
+      %th نام کاربری
+      %th
+      %th
+      %th
 
-%br
+    - @users.each do |user|
+      %tr
+        %td= user.email
+        %td= user.user_name
+        - if is_admin?
+          %td= link_to 'مشاهده', user, :class => "btn btn-warning"    
+          %td= link_to 'ویرایش', edit_user_path(user), :class => "btn btn-info" 
+          %td= link_to 'حذف', user, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
-= link_to 'New User', new_user_path
+  %br
+  - if is_admin?
+    = link_to 'کاربر جدید', new_user_path, :class => "btn btn-success"
