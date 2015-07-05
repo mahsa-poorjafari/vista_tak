@@ -12,12 +12,12 @@
             - @category.sub_groups.limit(4).each do |sub_group|            
               .col-xs-12
                 %span= image_tag sub_group.icon(:small), :width => "50"
-                %span= sub_group.title
+                %span= link_to sub_group.title, sub_group
           .col-xs-6{:class => I18n.locale == :fa ? "pull-right" : "pull-left" }  
             - @category.sub_groups.offset(4).each do |sub_group|            
               .col-xs-12
                 %span= image_tag sub_group.icon(:small), :width => "50"
-                %span= sub_group.title
+                %span= link_to sub_group.title, sub_group
             
       - if is_admin?
         = link_to 'ویرایش', edit_sub_group_path(@category)
