@@ -7,7 +7,7 @@
       = image_tag 'twetter.png'
     .col-xs-7.pull-left
     .col-xs-2.globe{:class => I18n.locale}
-      = link_to (image_tag 'globee.png'), locale: :fa, "data-toggle"=>"tooltip", :title=>"Language"
+      = link_to (image_tag 'globee.png'), locale: :fa
   .logo-box{:class => I18n.locale}
     .col-xs-4.pull-left
       = image_tag 'logo.png'
@@ -23,7 +23,9 @@
           .google-field.form-group
             %span.google-submit.col-xs-2.pull-left{:class => I18n.locale}
               =image_submit_tag 'ensearch.png', :name => "sa",  :class => I18n.locale, :style => "background:#016c93"
-            .col-xs-10{:style => "padding:0"}= text_field_tag :q, '', placeholder: 'Google Search',  :class => I18n.locale.to_s + " form-control", :style => "background:#ccc"
+            .col-xs-10{:style => "padding:0"}
+              = text_field_tag :q, '', placeholder: 'Google Search',  :class => I18n.locale.to_s + " form-control", :style => "background:#ccc"
+              = radio_button_tag 'sitesearch', 'http://vtp.co.ir/', true  , :style => "display:none"
     .clear-float
     .col-xs-12
       = link_to root_path, :class => "icon-link col-xs-2", :style => "padding:0" do
@@ -48,7 +50,7 @@
     .col-xs-7.pull-right
     .col-xs-2.globe{:class => I18n.locale}
       
-      = link_to (image_tag 'globee.png'), locale: :en, "data-toggle"=>"tooltip", :title=>"انگلیسی"
+      = link_to (image_tag 'globee.png'), locale: :en
       
   .logo-box{:class => I18n.locale}
     .col-xs-4.pull-right
@@ -65,7 +67,9 @@
           .google-field.form-group
             %span.google-submit.col-xs-2.pull-right{:class => I18n.locale}
               =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale, :style => "background:#016c93"
-            .col-xs-10{:style => "padding:0"}= text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale.to_s + " form-control", :style => "background:#ccc"
+            .col-xs-10{:style => "padding:0"}
+              = text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale.to_s + " form-control", :style => "background:#ccc"
+              = radio_button_tag 'sitesearch', 'http://vtp.co.ir/', true  , :style => "display:none"
     .clear-float
     .col-xs-12
       = link_to root_path do
