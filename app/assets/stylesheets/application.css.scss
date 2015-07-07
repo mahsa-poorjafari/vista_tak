@@ -32,7 +32,7 @@ html,body {position:relative; color:#000 }
   -moz-background-size: cover; 
   -o-background-size: cover;  }
 .main-div { 
-  position:relative; width:100%; min-height:655px; 
+  position:relative; width:100%; min-height:680px; 
   
   direction:rtl
   }
@@ -46,9 +46,11 @@ html,body {position:relative; color:#000 }
 .footer {position:absolute; bottom:0; width:100%; height:80px;  
   border-top:6px solid #016c93;
   text-align:center;
-  color:#000;
+  
   }
 .footer#font-color-white {color:#fff;}
+.footer#font-color-white p{color:#fff;}
+.footer#font-color-black p{color:#000;}
 
 .footer.other_footer {height:91px;}
 .footer.fa {left:0;}
@@ -71,13 +73,13 @@ html,body {position:relative; color:#000 }
 .copyright{clear:both; padding:0; padding-right:4%; width:100%; text-align:center; }
 .logo-box {
   z-index:20;
-  padding-top:1%;
+  padding:1%;
   background-image: url(image-path('main-menu.png'));
   background-repeat: repeat;
   position:absolute; width:100%; height:24vh; top:10%; right:0;  left:0;}
 .logo-box p {text-align:center; width:100%; font-size:1.8vw; color:#000; margin:0;}
 .logo-box p.en {font-size:2.2vw;}
-.logo-box img {width:80%; margin-bottom:2%;}
+.logo-box img { margin-bottom:2%;}
 
 .social-link {position:absolute; top:15px; width:100%; height:50px;
   right:0; left:0;
@@ -188,7 +190,7 @@ ul.en .horisantal-line {margin-left:-25px;}
 .contact-us .contact-form{margin-top:25px}
 .bg-image img {position:absolute; width:100%; right:0; left:0;
   top:0; bottom:0;
-  height:100%;}
+  height:600px;}
 .admin-pages {  
   position:absolute; width:100%; right:0; left:0;background:#fff; z-index:50;
   top:0;
@@ -262,3 +264,6 @@ width: 100px; list-style:none; padding:0}
 .sub-menu-test li {width:100%; padding:0}
 .sub-menu-test li a{width:100%; font-size:1.2em; color:#fff}
 .menu-bar ul#nav-items li.active-submenu:hover .horisantal-line {margin-right:-100px}
+#vista-title h1 {font-size: 1.5em;
+color: #000; margin-top: 0; text-align:center}
+#vista-title h1.fa {direction:rtl; font-family: 'open_sansregular';}

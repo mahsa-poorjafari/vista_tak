@@ -2,8 +2,7 @@
 %html
   %head
     %title= t('vistatech') 
-    = stylesheet_link_tag    "application", media: "all"
-    
+    = stylesheet_link_tag    "application", media: "all"    
     = csrf_meta_tags 
     %meta{content: "no", "http-equiv" => "imagetoolbar"}
     %meta{:content => "Raush Co", :name => "author"}/
@@ -11,15 +10,15 @@
     %meta{:content => "true", :name => "HandheldFriendly"}/
     %meta{:content => "width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no", :name => "viewport"}/
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png', :title => "ویستا تک پیشرو"
-
-  %body    
+  
+  %body
     
     .main-div{:class => I18n.locale, :id => (current_page?('/') ? 'main-bg-image' : 'main-bg-white')}
       - if I18n.locale == :en
         .blue-border-left.col-xs-12.pull-left{:style => "position:absolute;"}
         
           = yield 
-          .footer{:class => I18n.locale, :id => current_page?('/') ? "font-color-white" : "font-color-black" }
+          .footer{:class => I18n.locale, :id => current_page?('/') || current_page?(Category) ? "font-color-white" : "font-color-black" }
             
             = render 'shared/footer_en'
 
@@ -28,7 +27,7 @@
         .blue-border-right.col-xs-12.pull-right{:style => "position:absolute;"}
           = yield 
       
-          .footer{:class => I18n.locale, :id => current_page?('/') ? "font-color-white" : "font-color-black" }
+          .footer{:class => I18n.locale, :id => current_page?('/') || current_page?(Category) ? "font-color-white" : "font-color-black" }
             
             = render 'shared/footer_fa'
             
