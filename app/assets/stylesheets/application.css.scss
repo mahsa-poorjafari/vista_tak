@@ -168,15 +168,15 @@ ul.en .horisantal-line {margin-left:-25px;}
   transition: all .5s;
 }
 .menu-bar ul#nav-items li#avtivities .sub-menu { height:25px}
-.menu-bar ul#nav-items li#avtivities:hover .horisantal-line1111111{width:500px;}
+.menu-bar ul#nav-items li#avtivities:hover .horisantal-line{width:500px;}
 .menu-bar ul#nav-items li#avtivities:hover #sub-activities{display:block}
-.menu-bar ul#nav-items li#contact-pages #sub-pages{display:none; width:350px; list-style:none;}
+.menu-bar ul#nav-items li#contact-pages #sub-pages{display:none; width:350px; list-style:none; height:25px}
 .menu-bar ul#nav-items li#contact-pages:hover #sub-pages{display:block}
 .menu-bar ul#nav-items li#avtivities #sub-activities{width:550px; list-style:none; display:none}
 .menu-bar ul#nav-items li#avtivities .sub-menu .sub-item , #contact-pages .sub-menu .sub-item{text-align:center; padding:0; height:15px}
 .menu-bar ul#nav-items li#avtivities .sub-menu .sub-item a, #contact-pages .sub-menu .sub-item a{color:#000; font-size:.7em; }
 .menu-bar ul#nav-items li#avtivities .sub-menu .sub-item:hover a, #contact-pages .sub-menu .sub-item:hover a{color:#016c93}
-.menu-bar ul#nav-items li#contact-pages:hover .horisantal-line111111111{width:300px;}
+.menu-bar ul#nav-items li#contact-pages:hover .horisantal-line{width:300px;}
 .menu-bar ul#nav-items.fa li:hover .horisantal-line{margin-right:0;}
 .menu-bar ul#nav-items.en li:hover .horisantal-line{margin-left:0;}
 .blue-space {padding:0; width:1%; 
@@ -264,7 +264,7 @@ opacity: 0.7; width:100%;
 width: 100px; list-style:none; padding:0}
 .sub-menu-test li {width:100%; padding:0}
 .sub-menu-test li a{width:100%; font-size:1.2em; color:#fff}
-.menu-bar ul#nav-items li.active-submenu:hover .horisantal-line {margin-right:-100px}
+
 #vista-title h1 {font-size: 1.5em;
 color: #000; margin-top: 0; text-align:center}
 #vista-title h1.fa {direction:rtl; font-family: 'open_sansregular';}

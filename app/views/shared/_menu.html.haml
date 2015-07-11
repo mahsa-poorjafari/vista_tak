@@ -5,28 +5,27 @@
       = link_to root_path do
         %span=  t('home-page')
       .horisantal-line
-    %li.active-submenu{ :id => ('avtivities' if current_page?(root_path) )}
+    %li.active-submenu#avtivities
       = link_to Category do
         %span=  t('activities')
-      -#
-        - if current_page?('/')
-          %ul.sub-menu#sub-activities
-            - Category.all.each do |cat|
-              %li.sub-item.col-xs-3
-                =link_to cat.title, cat
+      
+        %ul.sub-menu#sub-activities
+          - Category.all.each do |cat|
+            %li.sub-item.col-xs-3
+              =link_to cat.title, cat
       .horisantal-line
     .clear-float        
     %li{ :class => ('active' if current_page?(Category))}        
       %span=  t('related-link')
       .horisantal-line
-    %li{ :id => ('contact-pages' if current_page?(root_path) )}
+    %li#contact-pages
       %span=  t('be-connect-us')
-      -#
-        - if current_page?('/')
-          %ul.sub-menu#sub-pages
-            - Page.all.each do |page|
-              %li.sub-item.col-xs-4.pull-right{ :class => ('active' if current_page?(page))}
-                =link_to  page.title, page
+      
+        
+      %ul.sub-menu#sub-pages
+        - Page.all.each do |page|
+          %li.sub-item.col-xs-4.pull-right{ :class => ('active' if current_page?(page))}
+            =link_to  page.title, page
       .horisantal-line      
     .clear-float
 -#
