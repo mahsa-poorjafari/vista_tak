@@ -16,7 +16,11 @@
     .form-group
       = f.label 'گروه مربوط را انتخاب کنید.', :class => "control-label"  
       = f.select :category_id, options_for_select(Category.all.collect{ |u| [u.title_fa, u.id] }, :selected => @sub_group.category_id), prompt: "گروه فعالیت ها را انتخاب کنید.", :class => "form-control"
-      
+    .form-group
+      %p.alert.alert-warning
+        = f.label 'در صورتی که می خواهید این آیتم برای عموم مخفی باشد تیک آن را فعال کنید.', :class => "control-label"
+      = f.check_box :hidden_tik, :class => "form-control"      
+    
     .form-group.alert.alert-info
       = f.label 'آیکن مرتبط.', :class => "control-label"
       - if @sub_group.icon.present?

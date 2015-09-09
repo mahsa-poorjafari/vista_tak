@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150628065322) do
+ActiveRecord::Schema.define(version: 20150909083837) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 20150628065322) do
     t.string   "icon_content_type"
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
+    t.boolean  "hidden_tik",               default: false
   end
 
   create_table "users", force: true do |t|

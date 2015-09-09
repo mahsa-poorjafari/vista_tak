@@ -7,17 +7,18 @@
       %h3{:class => I18n.locale}= @category.title
       .clear-float
       .sub-group-discript
-        - if @category.sub_groups.present?
+        - if @category.sub_groups.present? 
           .col-xs-6{:class => I18n.locale == :fa ? "pull-right" : "pull-left" }
-            - @category.sub_groups.limit(4).each do |sub_group|            
-              .col-xs-12
-                %span= image_tag sub_group.icon(:small), :width => "50"
-                %span= link_to sub_group.title, sub_group
+            - @category.sub_groups.limit(4).each do |sub_group| 
+              - if sub_group.hidden_tik != true || is_admin?
+                .col-xs-12
+                  %span= image_tag sub_group.icon(:small), :width => "50"
+                  %span= link_to sub_group.title, sub_group
           .col-xs-6{:class => I18n.locale == :fa ? "pull-right" : "pull-left" }  
             - @category.sub_groups.offset(4).each do |sub_group|            
-              .col-xs-12
-                %span= image_tag sub_group.icon(:small), :width => "50"
-                %span= link_to sub_group.title, sub_group
+              - if sub_group.hidden_tik != true || is_admin?
+                .col-xs-12
+                  %span= image_tag sub_group.icon(:small), :width => "50"
+                  %span= link_to sub_group.title, sub_group
             
-      - if is_admin?
-        = link_to 'ویرایش', edit_sub_group_path(@category)
+      
