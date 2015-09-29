@@ -19,20 +19,27 @@
     #container1
       %ul.col-xs-12
         - @categories.each do |category|
-          %li.pull-right.cat-box
-            - if is_admin?
-              %span.admin-link 
-                = link_to 'ویرایش', edit_category_path(category), :class => "btn btn-info"     
-            = link_to category do              
-              %h2.act-title
-                = category.title
-                
-              - if category.photos.present?
-                = image_tag category.photos.first.image(:horizantal)              
-            .cat-sub
-              - if category.sub_groups.present?
-                - category.sub_groups.each do |sub_group|                
-                  %p= link_to sub_group.title,  sub_group
+          - @sub_cat_show = true
+          - category.sub_groups.all.each do |sub_cat|
+            - if sub_cat.hidden_tik == true
+              - @sub_cat_show = false
+            - else
+              - @sub_cat_show = true
+          - if @sub_cat_show || is_admin?
+            %li.pull-right.cat-box
+              - if is_admin?
+                %span.admin-link 
+                  = link_to 'ویرایش', edit_category_path(category), :class => "btn btn-info"     
+              = link_to category do              
+                %h2.act-title
+                  = category.title
+                  
+                - if category.photos.present?
+                  = image_tag category.photos.first.image(:horizantal)              
+              .cat-sub
+                - if category.sub_groups.present?
+                  - category.sub_groups.each do |sub_group|                
+                    %p= link_to sub_group.title,  sub_group
                   
               -#
                 = image_tag category.photos.first.image(:horizantal),:alt => "<div class = 'act-des'>"+category.description+"</div><h3 class= 'see-more'>"+t('see-more')+"</h3>"

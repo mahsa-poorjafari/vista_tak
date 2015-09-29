@@ -11,8 +11,16 @@
       
         %ul.sub-menu#sub-activities
           - Category.all.each do |cat|
-            %li.sub-item.col-xs-3
-              =link_to cat.title, cat
+            
+            - @sub_cat_show = true
+            - cat.sub_groups.all.each do |sub_cat|
+              - if sub_cat.hidden_tik == true
+                - @sub_cat_show = false
+              - else
+                - @sub_cat_show = true
+            - if @sub_cat_show || is_admin?
+              %li.sub-item.col-xs-3
+                =link_to cat.title, cat
       .horisantal-line
     .clear-float        
     %li{ :class => ('active' if current_page?(Category))}        
