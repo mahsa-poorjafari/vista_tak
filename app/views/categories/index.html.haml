@@ -20,12 +20,11 @@
       %ul.col-xs-12
         - @categories.each do |category|
           - @sub_cat_show = true
-          - category.sub_groups.all.each do |sub_cat|
-            - if sub_cat.hidden_tik == true
-              - @sub_cat_show = false
-            - else
-              - @sub_cat_show = true
-          - if @sub_cat_show || is_admin?
+          - @sub_cat_count = category.sub_groups.count(:conditions => "hidden_tik = true")                      
+          - if @sub_cat_count == category.sub_groups.count 
+          
+            - @sub_cat_show = false
+          - if @sub_cat_show || is_admin? || category.sub_groups.count == 0
             %li.pull-right.cat-box
               - if is_admin?
                 %span.admin-link 
