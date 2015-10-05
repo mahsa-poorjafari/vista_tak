@@ -173,7 +173,8 @@ ul.en .horisantal-line {margin-left:-25px;}
 .menu-bar ul#nav-items li#contact-pages #sub-pages{display:none; width:350px; list-style:none; height:25px}
 .menu-bar ul#nav-items li#contact-pages:hover #sub-pages{display:block}
 .menu-bar ul#nav-items li#avtivities #sub-activities{width:550px; list-style:none; display:none}
-.menu-bar ul#nav-items li#avtivities .sub-menu .sub-item , #contact-pages .sub-menu .sub-item{text-align:center; padding:0; height:15px}
+.menu-bar ul#nav-items li#avtivities .sub-menu .sub-item , #contact-pages .sub-menu .sub-item{text-align:center; padding:0; height:15px; float:right; font-weight:bold}
+.menu-bar ul#nav-items.fa li#avtivities .sub-menu .sub-item{text-align:right;}
 .menu-bar ul#nav-items li#avtivities .sub-menu .sub-item a, #contact-pages .sub-menu .sub-item a{color:#000; font-size:.7em; }
 .menu-bar ul#nav-items li#avtivities .sub-menu .sub-item:hover a, #contact-pages .sub-menu .sub-item:hover a{color:#016c93}
 .menu-bar ul#nav-items li#contact-pages:hover .horisantal-line{width:300px;}
