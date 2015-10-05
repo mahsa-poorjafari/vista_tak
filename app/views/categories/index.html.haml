@@ -38,7 +38,8 @@
               .cat-sub
                 - if category.sub_groups.present?
                   - category.sub_groups.each do |sub_group|                
-                    %p= link_to sub_group.title,  sub_group
+                    - unless sub_group.hidden_tik == true
+                      %p= link_to sub_group.title,  sub_group
                   
               -#
                 = image_tag category.photos.first.image(:horizantal),:alt => "<div class = 'act-des'>"+category.description+"</div><h3 class= 'see-more'>"+t('see-more')+"</h3>"
