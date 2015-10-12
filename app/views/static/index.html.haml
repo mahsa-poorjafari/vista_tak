@@ -2,12 +2,27 @@
   .social-link
     .col-xs-3.pull-left.social-icon
       = image_tag 'linkedin.png'
-      = image_tag 'google.png'
+      = image_tag 'instagram.png'      
       = image_tag 'facebook.png'
-      = image_tag 'twetter.png'
+      
     .col-xs-7.pull-left
+      .search-div.pull-left{:class => I18n.locale}
+    
+        .col-xs-4#search.pull-right
+          = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
+            .search_on_google
+              .google-field.form-group
+                %span.google-submit.col-xs-2.pull-left{:class => I18n.locale}
+                  =image_submit_tag 'ensearch.png', :name => "sa",  :class => I18n.locale, :style => "background:#016c93"
+                .col-xs-10{:style => "padding:0"}
+                  = text_field_tag :q, '', placeholder: 'Google Search',  :class => I18n.locale.to_s + " form-control"
+                  = radio_button_tag 'sitesearch', 'http://vtp.co.ir/', true  , :style => "display:none"
     .col-xs-2.globe{:class => I18n.locale}
       = link_to (image_tag 'globee.png'), locale: :fa
+      = link_to root_path do
+        = image_tag 'home.png', :class => "home-icon"
+      
+      = image_tag 'phone.png', :class => "phone-icon"
   .logo-box{:class => I18n.locale}
     = link_to root_path , :class => "col-xs-4 pull-left" do
     
@@ -16,23 +31,10 @@
         %h1.fa ویستا تک پیشرو (سهامی خاص)
         %h1.en Vistatech Pishro
       
-  .search-div.pull-left{:class => I18n.locale}
-    
-    .col-xs-4#search.pull-left
-      = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
-        .search_on_google
-          .google-field.form-group
-            %span.google-submit.col-xs-2.pull-left{:class => I18n.locale}
-              =image_submit_tag 'ensearch.png', :name => "sa",  :class => I18n.locale, :style => "background:#016c93"
-            .col-xs-10{:style => "padding:0"}
-              = text_field_tag :q, '', placeholder: 'Google Search',  :class => I18n.locale.to_s + " form-control"
-              = radio_button_tag 'sitesearch', 'http://vtp.co.ir/', true  , :style => "display:none"
+  
     .clear-float
-    .col-xs-12
-      = link_to root_path do
-        = image_tag 'home.png', :class => "home-icon"
+    
       
-      = image_tag 'phone.png', :class => "phone-icon"
   .menu-bar{:class => I18n.locale}
     = render 'shared/menu_en'
   .menu-responsive{:class => I18n.locale}
@@ -42,40 +44,38 @@
   .social-link
     .col-xs-3.pull-right.social-icon
       = image_tag 'linkedin.png'
-      = image_tag 'google.png'
+      = image_tag 'instagram.png'      
       = image_tag 'facebook.png'
-      = image_tag 'twetter.png'
-    .col-xs-7.pull-right
-    .col-xs-2.globe{:class => I18n.locale}
       
-      = link_to (image_tag 'globee.png'), locale: :en
+    .col-xs-7.pull-right{:style => "padding:0"}
+      .col-xs-4.search-div{:class => I18n.locale, :style => "padding:0"}
+    
+        #search
+          = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
+            .search_on_google
+              .google-field.form-group
+                %span.google-submit.col-xs-2.pull-right{:class => I18n.locale}
+                  =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale, :style => "background:#016c93"
+                .col-xs-10{:style => "padding:0"}
+                  = text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale.to_s + " form-control"
+                  = radio_button_tag 'sitesearch', 'http://vtp.co.ir/', true  , :style => "display:none"
+    .col-xs-2.globe{:class => I18n.locale}      
+      = link_to (image_tag 'globee.png', :class => "globe-lg"), locale: :en
+      = link_to root_path do
+        = image_tag 'home.png', :class => "home-icon"      
+        = image_tag 'phone.png', :class => "phone-icon"
       
   .logo-box{:class => I18n.locale}
     = link_to root_path , :class => " col-xs-4 pull-right" do
     
       = image_tag 'logo.png'  , :width => "300"    
-      .col-xs-10.pull-right#vista-title{:style => "padding:0"}
-        %h1 ویستا تک پیشرو (سهامی خاص)
+      .col-xs-9.pull-right#vista-title{:style => "padding:0"}
+        %h1{:style => "text-align:right"} ویستا تک پیشرو (سهامی خاص)
         %h1.en Vistatech Pishro
       
-  .search-div.pull-right{:class => I18n.locale}
-    
-    .col-xs-3#search.pull-right
-      = form_tag "http://google.com/search", method: "get",  :target=> "_blank", :class => "contact-form", :id => "contact-form" do
-        .search_on_google
-          .google-field.form-group
-            %span.google-submit.col-xs-2.pull-right{:class => I18n.locale}
-              =image_submit_tag 'search.png', :name => "sa",  :class => I18n.locale, :style => "background:#016c93"
-            .col-xs-10{:style => "padding:0"}
-              = text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale.to_s + " form-control"
-              = radio_button_tag 'sitesearch', 'http://vtp.co.ir/', true  , :style => "display:none"
-              
+  
     .clear-float
-    .col-xs-12
-      = link_to root_path do
-        = image_tag 'home.png', :class => "home-icon"
-      
-      = image_tag 'phone.png', :class => "phone-icon"
+    
   .menu-bar
     = render 'shared/menu'
   .menu-responsive{:class => I18n.locale}

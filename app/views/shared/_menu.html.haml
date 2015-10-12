@@ -19,7 +19,7 @@
               - @sub_cat_show = false
               
             - if @sub_cat_show || is_admin? || cat.sub_groups.count == 0
-              %li.sub-item.col-xs-3
+              %li.sub-item
                 =link_to cat.title, cat
       .horisantal-line
     .clear-float        
