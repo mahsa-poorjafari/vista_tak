@@ -12,7 +12,7 @@
         %ul.sub-menu#sub-activities
           - Category.all.each do |cat|
             - @sub_cat_show = true            
-            - @sub_cat_count = cat.sub_groups.count(:conditions => "hidden_tik = true")            
+            - @sub_cat_count = cat.sub_groups.where(:hidden_tik => true).count
             
             - if @sub_cat_count == cat.sub_groups.count 
             
