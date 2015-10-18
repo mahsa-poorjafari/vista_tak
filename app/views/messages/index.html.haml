@@ -1,25 +1,28 @@
-%h1 Listing messages
+.fa
+  %h1 لیست پیام های کاربران
+  .massage-lists
+    %table.table
+      %tr{:style => "background-color:#7F7F7F"}
+        %th ردیف
+        %th نام 
+        %th ایمیل
+        %th شماره تماس
+        %th متن پیام
+        %th تاریخ ارسال
+        
+        %th عملیات
+      
+      - @messages.each_with_index do |message,i|
+        %tr{:class => ('unvisite' if message.visit == false)}
+          %td= (i+1)
+          %td= message.name
+          %td= message.email
+          %td= message.phone_number
+          %td= message.text
+          %td= JalaliDate.new(message.created_at).strftime("%A %e %b %Y")   
+          %td
+            - if is_admin?
+              = link_to 'مشاهده', message        , :class => "btn btn-warning"                         
+              = link_to 'حذف', message, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => "btn btn-danger"
 
-%table
-  %tr
-    %th Name
-    %th Email
-    %th Phone number
-    %th Text
-    %th
-    %th
-    %th
-
-  - @messages.each do |message|
-    %tr
-      %td= message.name
-      %td= message.email
-      %td= message.phone_number
-      %td= message.text
-      %td= link_to 'Show', message
-      %td= link_to 'Edit', edit_message_path(message)
-      %td= link_to 'Destroy', message, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Message', new_message_path
+ 

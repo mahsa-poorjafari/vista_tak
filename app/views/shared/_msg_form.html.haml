@@ -23,9 +23,14 @@
   .form-group    
     
     = f.text_area :text, :class => "form-control needed", :style => "resize:none", :rows => 5, :placeholder => t('msg.contact-msg')
-    
+  .col-xs-6.pull-right{:style => "padding:0"}       
+    = f.simple_captcha :label => t('captcha')  
   .form-group
     = f.submit t('msg.contact-btn'), :class => "btn btn-primary"
-
+    .col-xs-6
+      - if flash[:msgsend]
+        .alert.alert-success= flash[:msgsend]
+      - elsif flash[:errormsg]
+        .alert.alert-danger= flash[:errormsg]
 
   

@@ -166,6 +166,7 @@ span.google-submit.en {padding:0; text-align:right; margin-right:0;}
 .menu-bar {position:absolute; top:35%; width:20%; left:0; right:0; z-index:20;}
 .menu-bar ul#nav-items {list-style:none; padding-right:1%;}
 .menu-bar ul#nav-items.en {padding-left:1%}
+.menu-bar ul#nav-items.en li{margin-right:15px}
 .menu-bar ul#nav-items li{color:#000; font-size:1.2em; height:70px; position:relative; padding-top:20px;}
 .menu-bar ul#nav-items li a, .menu-bar ul#nav-items li a:hover{color:#000; text-decoration:none}
 .menu-bar ul#nav-items li:hover{cursor:pointer; }
@@ -204,7 +205,8 @@ ul.en .horisantal-line {margin-left:-25px;}
   float:left}
 .blue-space.fa {margin-left:5px; }
 .blue-space.en {margin-left:-5px; }
-.contact-us {top:250px}
+.contact-us {top:220px}
+.contact-us.en {float:right}
 .contact-us .contact-form{margin-top:25px}
 .bg-image img {position:absolute; width:100%; right:0; left:0;
   top:0; bottom:0;
@@ -286,3 +288,6 @@ width: 100px; list-style:none; padding:0}
 #vista-title h1 {font-size: 1.5em;
 color: #000; margin-top: 0; text-align:center}
 #vista-title h1.fa {direction:rtl; font-family: 'open_sansregular';}
+span.unreadmsg_notif {background:#AE0B0B; color:#fff; border-radius:50%; padding:3px}
+.massage-lists {height:470px; overflow-y:scroll}
+.massage-lists table tr.unvisite td {font-weight:bold}

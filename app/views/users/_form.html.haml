@@ -7,13 +7,24 @@
   .col-xs-6.pull-right
     .form-group
       = f.label 'ایمیل:', :class => "control-label"
-      = f.text_field :email, :class => "form-control"
+      = f.text_field :email, :class => "form-control", :id => "user-email"
     .form-group
       = f.label 'نام کاربری', :class => "control-label"
-      = f.text_field :user_name, :class => "form-control"
+      = f.text_field :user_name, :class => "form-control", :id => "user-name"
     .form-group
       = f.label 'رمزعبور:', :class => "control-label"
-      = f.text_field :password, :class => "form-control"
+      = f.password_field :password, :class => "form-control", :id => "user-password"
     .form-group
-      = f.submit 'ثبت', :class => "btn btn-primary"
+      = f.submit 'ثبت', :class => "btn btn-primary", :id => "new_user"
   .clear-float
+  
+:javascript   
+  $('#new_user').click(function(e) {
+    $(':text#user-name, :text#user-email, :password#user-password').each(function() {
+      if ($(this).val().length == 0) {
+        $(this).css('border', '2px solid red');
+        e.preventDefault();
+      }
+    });
+  });
+  

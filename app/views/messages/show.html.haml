@@ -1,18 +1,21 @@
-%p#notice= notice
+.activities{:class => I18n.locale}
+  %h1= 'پیام ارسالی کاربر'
+  %p
+    %b نام
+    = @message.name
+  %p
+    %b ایمیل
+    = @message.email
+  %p
+    %b تلفن تماس
+    = @message.phone_number
+  %p
+    %b پیام ارسالی
+    = @message.text
 
-%p
-  %b Name:
-  = @message.name
-%p
-  %b Email:
-  = @message.email
-%p
-  %b Phone number:
-  = @message.phone_number
-%p
-  %b Text:
-  = @message.text
+  %p
+    %b تاریخ ارسال پیام
+    = JalaliDate.new(@message.created_at).strftime("%A %e %b %Y")          
 
-= link_to 'Edit', edit_message_path(@message)
-\|
-= link_to 'Back', messages_path
+  
+  = link_to 'بازگشت', messages_path

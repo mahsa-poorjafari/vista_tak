@@ -1,23 +1,44 @@
 
 .navbar-inner.col-xs-12{:class => (I18n.locale == :en ? "pull-left" : "pull-right") }
-  %ul#nav-items{:class => I18n.locale}  
+  %ul#nav-items{:class => I18n.locale}      
     %li{ :class => ('active' if current_page?(root_path))}
       = link_to root_path do
         %span=  t('home-page')
       .horisantal-line
-    %li{ :class => ('active' if current_page?(Category))}
+    %li.active-submenu#avtivities
       = link_to Category do
         %span=  t('activities')
+      
+        %ul.sub-menu#sub-activities{:class => I18n.locale}
+          - Category.all.each do |cat|
+            - @sub_cat_show = true            
+            - @sub_cat_count = cat.sub_groups.count(:conditions => "hidden_tik = true")            
+            
+            - if @sub_cat_count == cat.sub_groups.count 
+            
+              - @sub_cat_show = false
+              
+            - if @sub_cat_show || is_admin? || cat.sub_groups.count == 0
+              %li.sub-item.pull-left
+                =link_to cat.title, cat
       .horisantal-line
+    .clear-float        
     %li{ :class => ('active' if current_page?(Category))}        
       %span=  t('related-link')
       .horisantal-line
-    %li
-      %span=  t('contact')
-      .horisantal-line
-    -#
-      - Page.all.each do |page|
-        %li{ :class => ('active' if current_page?(page))}
-          %span=  page.title
-          .horisantal-line.horisantal-line
-
+    %li#contact-pages
+      %span=  t('connect-us')
+      
+        
+      %ul.sub-menu#sub-pages
+        - Page.all.each do |page|
+          %li.sub-item.col-xs-4.pull-left{ :class => ('active' if current_page?(page))}
+            =link_to  page.title, page
+      .horisantal-line      
+    .clear-float
+-#
+  - if current_page?('/')
+    %ul.sub-menu-test#sub-activities-test
+      - Category.all.each do |cat|
+        %li.sub-item.col-xs-3
+          =link_to cat.title, cat

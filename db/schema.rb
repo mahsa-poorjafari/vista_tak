@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909083837) do
+ActiveRecord::Schema.define(version: 20151018131539) do
 
   create_table "ahoy_events", force: true do |t|
     t.uuid     "visit_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150909083837) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "visit",        default: false
   end
 
   create_table "pages", force: true do |t|
@@ -110,6 +111,15 @@ ActiveRecord::Schema.define(version: 20150909083837) do
     t.integer  "category_id"
     t.integer  "sub_group_id"
   end
+
+  create_table "simple_captcha_data", force: true do |t|
+    t.string   "key",        limit: 40
+    t.string   "value",      limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
 
   create_table "slides", force: true do |t|
     t.string   "description"

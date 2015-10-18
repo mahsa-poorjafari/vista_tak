@@ -1,5 +1,7 @@
 .admin-menu{:class => I18n.locale}
+  -@unreadmsg = Message.where(visit: 0).count
   %b.fa منوی مدیرسایت
+  %span.unreadmsg_notif= @unreadmsg
   %ul.admin.fa
     %li
       = link_to 'صفحه اصلی', root_path
@@ -14,9 +16,10 @@
       = link_to 'پروفایل مدیرسایت', User
     %li
       = link_to 'مدیریت صفحات متنی', Page
-    -#
-      %li
-        = link_to 'مدیریت اسلایدر', Slide
+  
+    %li
+      = link_to 'مدیریت پیام های ارسال شده', Message
+      %span.unreadmsg_notif= @unreadmsg
 
     %li
       = link_to 'خروج', delete_session_path
