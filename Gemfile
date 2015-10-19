@@ -63,3 +63,4 @@ gem 'jbuilder', '~> 1.2'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'simple_captcha2', require: 'simple_captcha'
+gem 'canonical-rails', github: 'jumph4x/canonical-rails'
