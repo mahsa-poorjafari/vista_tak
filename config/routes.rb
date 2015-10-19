@@ -22,6 +22,8 @@ PackB::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'  
   root :to => 'static#index'
   get "login" => "users#login"  
+  get "google46bde3a8d7d48d7d" => "static#google46bde3a8d7d48d7d"  
+  get "sitemap" => "static#sitemap"  
   post "create_session" => "users#create_session", :as => :create_session
   get "delete_session" => "users#delete_session", :as => :delete_session
 
