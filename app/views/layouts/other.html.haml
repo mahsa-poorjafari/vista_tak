@@ -1,10 +1,10 @@
 !!!
 %html
   %head
-    %title= t('vistatech') + ' ' + 'ویستاتک پیشرو سهامی خاص'
+    %title= t('vistatech') + ' ' + 'سهامی خاص'
     = stylesheet_link_tag    "application", media: "all"    
     = csrf_meta_tags 
-    = javascript_include_tag 'application'    
+    
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}
     %meta{:charset => "utf-8"}  
     %meta{:name => "robots", :content => "Index,follow"}
@@ -14,14 +14,14 @@
     %meta{:name => "teoma", :content => "Index,follow"}
     %meta{:content => "vG16WSPPj39lbcp_HWJ-DNUWrA4lajNUp2EtMoI6KaQ", :name => "google-site-verification"}
     %meta{content: "no", "http-equiv" => "imagetoolbar"}
-    %meta{:name => "description", :content => "تهران، سعادت آباد، بلوار پاکنژاد، بالاتر از میدان بهرود، کوچه 29، پلاک 10، واحد 1کدپستی: ۱۹۸۱۸۶۷۱۹۴ایمیل: Info@VTP.Co.IR"}
+    %meta{:name => "description", :content => " سعادت آباد، بلوار پاکنژاد، بالاتر از میدان بهرود، کوچه 29، پلاک 10Info@VTP.Co.IR"}
     %meta{:name => "keywords", :content => Category.all.collect(&:title_fa).join(",") + ' ' + Category.all.collect(&:title_en).join(",") + ' ' + SubGroup.all.collect(&:title_fa).join(",") + ' ' + SubGroup.all.collect(&:title_en).join(",")}
     %meta{:content => "شرکت راش بنیان مدرن پاژ", :name => "author"}/
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "true", :name => "HandheldFriendly"}/
     %meta{:content => "width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no", :name => "viewport"}/
     = favicon_link_tag 'favicon.png', rel:'shortcut icon', type: 'image/png', :title => "ویستا تک پیشرو"
-  
+    =link_to 'http://vtp.co.ir/', :rel => "canonical"
 
   %body
     
