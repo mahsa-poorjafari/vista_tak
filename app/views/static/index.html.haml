@@ -17,7 +17,7 @@
                 .col-xs-10{:style => "padding:0"}
                   = text_field_tag :q, '', placeholder: 'Google Search',  :class => I18n.locale.to_s + " form-control"
                   = radio_button_tag 'sitesearch', 'http://vtp.co.ir/', true  , :style => "display:none"
-    .col-xs-2.globe{:class => I18n.locale}
+    .col-xs-2.globe{:class => I18n.locale}      
       = link_to (image_tag 'globee.png'), locale: :fa
       = link_to root_path do
         = image_tag 'home.png', :class => "home-icon"
@@ -61,7 +61,8 @@
                   = text_field_tag :q, '', placeholder: 'جستجو در گوگل',  :class => I18n.locale.to_s + " form-control"
                   = radio_button_tag 'sitesearch', 'http://vtp.co.ir/', true  , :style => "display:none"
     .col-xs-2.globe{:class => I18n.locale}      
-      = link_to (image_tag 'globee.png', :class => "globe-lg"), locale: :en
+      - if is_admin?
+        = link_to (image_tag 'globee.png', :class => "globe-lg"), locale: :en       
       = link_to root_path do
         = image_tag 'home.png', :class => "home-icon"      
         = image_tag 'phone.png', :class => "phone-icon"

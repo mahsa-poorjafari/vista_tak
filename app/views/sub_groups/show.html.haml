@@ -13,8 +13,9 @@
   .show-sub-group{:class => I18n.locale}
     .show-title-sub-group{:class => I18n.locale}
       %h3= @sub_group.title   
+      - if is_admin?
+        = link_to 'ویرایش', edit_sub_group_path(@sub_group), :class => "btn btn-info"      
+
     .clear-float
-    .sub-group-discript= raw @sub_group.description
-    - if is_admin?
-      = link_to 'ویرایش', edit_sub_group_path(@sub_group)
-      
+    .sub-group-discription= raw @sub_group.description
+    
